@@ -1,0 +1,110 @@
+---
+const principles = [
+  { n: '01', title: 'Chemistry over volume', body: 'Fewer empty swipes. More people who feel like a yes.' },
+  { n: '02', title: 'Nearby first', body: 'Real dates start with real proximity - not a continent away.' },
+  { n: '03', title: 'Voice before small talk', body: 'Rooms let you hear the vibe before the texting spiral.' },
+  { n: '04', title: 'Be yourself, loudly', body: 'Profiles and stages that reward personality, not performance.' },
+  { n: '05', title: 'Safety is table stakes', body: 'Controls, reporting, and verification built into the flow.' },
+  { n: '06', title: 'Premium without pressure', body: 'M8tcha+ unlocks extras. The core experience stays human.' },
+];
+---
+
+<section class="manifesto" id="manifesto">
+  <div class="wrap">
+    <div class="manifesto__head reveal">
+      <p class="eyebrow">Manifesto</p>
+      <h2>
+        For people who want<br />
+        <span class="accent">more than a maybe.</span>
+      </h2>
+      <p class="lede">Six beliefs that shape every screen, swipe, and stage.</p>
+    </div>
+
+    <div class="principles">
+      {
+        principles.map((p, i) => (
+          <article class={`principle reveal reveal-delay-${(i % 3) + 1}`}>
+            <span>{p.n}</span>
+            <h3>{p.title}</h3>
+            <p>{p.body}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .manifesto {
+    position: relative;
+    z-index: 1;
+    padding: var(--section-space) 0;
+  }
+
+  .manifesto__head {
+    max-width: min(44rem, 100%);
+    margin-bottom: clamp(2.25rem, 5vw, 4rem);
+  }
+
+  .eyebrow {
+    color: var(--matcha-bright);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: var(--font-size-h2);
+    margin-bottom: 1rem;
+  }
+
+  .lede {
+    color: var(--text-muted);
+    font-size: var(--font-size-lede);
+  }
+
+  .principles {
+    display: grid;
+    gap: 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .principle {
+    display: grid;
+    gap: 0.55rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .principle span {
+    color: var(--pink);
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.9rem;
+  }
+
+  h3 {
+    font-size: var(--font-size-h3);
+  }
+
+  .principle p {
+    color: var(--text-muted);
+    max-width: 42ch;
+  }
+
+  @media (min-width: 800px) {
+    .principle {
+      grid-template-columns: 4rem 1fr 1.2fr;
+      align-items: baseline;
+      gap: 1.5rem;
+    }
+
+    .principle p {
+      justify-self: end;
+      text-align: right;
+    }
+  }
+</style>

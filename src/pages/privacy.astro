@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Privacy -M8tcha" description="How M8tcha handles your data.">
+  <Nav />
+  <main class="legal wrap">
+    <h1>Privacy</h1>
+    <p>
+      M8tcha uses your account details, profile content, and location (with permission) to power
+      discovery, matching, and Rooms. We don’t sell your personal data. Full policy coming soon —
+      questions: <a href="mailto:hello@m8tcha.com">hello@m8tcha.com</a>.
+    </p>
+    <a class="back" href="/">← Back home</a>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .legal {
+    position: relative;
+    z-index: 1;
+    padding: 4rem 0 5rem;
+    max-width: 40rem;
+  }
+
+  h1 {
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  a {
+    color: var(--matcha-bright);
+  }
+
+  .back {
+    font-weight: 600;
+  }
+</style>

@@ -1,0 +1,176 @@
+---
+const APP_STORE_URL = '#'; // TODO: replace with App Store listing URL
+const PLAY_STORE_URL = '#'; // TODO: replace when Google Play ships
+---
+
+<section class="download" id="download">
+  <div class="wrap download__panel reveal">
+    <div>
+      <p class="eyebrow">Ready?</p>
+      <h2>
+        Your people are<br />
+        <span class="accent-pink">already nearby.</span>
+      </h2>
+      <p class="lede">
+        Download M8tcha, set your vibe, and start matching with intention -then hop into a Room when
+        the chemistry’s warm.
+      </p>
+    </div>
+
+    <div class="download__actions" data-store-actions>
+      <a
+        class="store"
+        data-store="apple"
+        href={APP_STORE_URL}
+        aria-label="Download on the App Store"
+        hidden
+      >
+        <span class="store__label">Download on the</span>
+        <strong>App Store</strong>
+      </a>
+      <a
+        class="store store--soon"
+        data-store="google"
+        href={PLAY_STORE_URL}
+        aria-label="Google Play -coming soon"
+        aria-disabled="true"
+        tabindex="-1"
+        hidden
+      >
+        <span class="store__label">Coming soon on</span>
+        <strong>Google Play</strong>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  const ua = navigator.userAgent || '';
+  const isAndroid = /Android/i.test(ua);
+  const isAppleMobile = /iPhone|iPad|iPod/i.test(ua);
+  const isMac = /Macintosh|Mac OS X/i.test(ua) && !isAndroid;
+  const isApple = isAppleMobile || isMac;
+  // iPadOS 13+ may report as Mac; treat touch Macs as Apple either way.
+
+  const apple = document.querySelector('[data-store="apple"]');
+  const google = document.querySelector('[data-store="google"]');
+
+  if (isAndroid) {
+    google?.removeAttribute('hidden');
+  } else if (isApple) {
+    apple?.removeAttribute('hidden');
+  } else {
+    // Desktop / other -App Store is live; Play is coming later.
+    apple?.removeAttribute('hidden');
+    google?.removeAttribute('hidden');
+  }
+
+  google?.addEventListener('click', (event) => {
+    // Not live yet -block navigation until PLAY_STORE_URL is set.
+    if (!google.getAttribute('href') || google.getAttribute('href') === '#') {
+      event.preventDefault();
+    }
+  });
+</script>
+
+<style>
+  .download {
+    position: relative;
+    z-index: 1;
+    padding: 0 0 var(--section-space);
+  }
+
+  .download__panel {
+    display: grid;
+    gap: 2rem;
+    padding: clamp(2rem, 4vw, 4rem);
+    border-radius: calc(var(--radius-lg) + 4px);
+    border: 1.5px solid var(--border);
+    background:
+      radial-gradient(ellipse 60% 80% at 100% 0%, rgba(240, 116, 156, 0.18), transparent 55%),
+      radial-gradient(ellipse 50% 70% at 0% 100%, rgba(116, 161, 46, 0.16), transparent 50%),
+      var(--bg-elevated);
+    box-shadow: var(--shadow-matcha);
+  }
+
+  .eyebrow {
+    color: var(--pink);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: var(--font-size-h2);
+    margin-bottom: 1rem;
+  }
+
+  .lede {
+    color: var(--text-muted);
+    max-width: 42ch;
+    font-size: var(--font-size-lede);
+  }
+
+  .download__actions {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.65rem;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .store {
+    display: grid;
+    gap: 0.1rem;
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 0.7rem 0.85rem;
+    border-radius: 12px;
+    background: var(--text);
+    color: var(--bg);
+    border: 2px solid var(--text);
+    box-shadow: 4px 4px 0 var(--matcha-bright);
+    transition:
+      transform 0.2s var(--ease-out),
+      box-shadow 0.2s var(--ease-out);
+  }
+
+  .store:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--matcha-bright);
+  }
+
+  .store--soon {
+    background: transparent;
+    color: var(--text-muted);
+    border-color: var(--border);
+    box-shadow: 4px 4px 0 var(--border);
+    cursor: default;
+  }
+
+  .store--soon:hover {
+    transform: none;
+    box-shadow: 4px 4px 0 var(--border);
+  }
+
+  .store__label {
+    font-size: 0.7rem;
+    opacity: 0.75;
+  }
+
+  .store strong {
+    font-family: var(--font-display);
+    font-size: clamp(0.9rem, 2.8vw, 1.05rem);
+    letter-spacing: -0.02em;
+  }
+
+  @media (min-width: 880px) {
+    .download__panel {
+      grid-template-columns: 1.3fr 1fr;
+      align-items: end;
+    }
+  }
+</style>

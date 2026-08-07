@@ -1,0 +1,180 @@
+---
+---
+
+<section class="rooms" id="rooms">
+  <div class="wrap rooms__grid">
+    <div class="rooms__visual reveal" aria-hidden="true">
+      <div class="grid-stage">
+        <div class="tile tile--host">
+          <div class="tile__avatar"></div>
+          <span>You · Host</span>
+        </div>
+        <div class="tile">
+          <div class="tile__avatar tile__avatar--2"></div>
+          <span>Sam</span>
+        </div>
+        <div class="tile">
+          <div class="tile__avatar tile__avatar--3"></div>
+          <span>Jordan</span>
+        </div>
+        <div class="tile tile--muted">
+          <div class="tile__avatar tile__avatar--4"></div>
+          <span>Raised hand</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="rooms__copy reveal reveal-delay-1">
+      <p class="eyebrow">Live Rooms</p>
+      <h2>
+        Meet the vibe<br />
+        <span class="accent">before the date.</span>
+      </h2>
+      <p class="lede">
+        Rooms are shared audio and video stages - host a hangout, invite people up, or just listen
+        in. It’s social dating with a pulse.
+      </p>
+      <ul class="bullets">
+        <li>Host or join live stages</li>
+        <li>Invite speakers with a tap</li>
+        <li>Jump from match → conversation → Room</li>
+      </ul>
+      <a class="btn btn-pink" href="#download">Try Rooms</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .rooms {
+    position: relative;
+    z-index: 1;
+    padding: var(--section-space) 0;
+  }
+
+  .rooms__grid {
+    display: grid;
+    gap: clamp(2rem, 4vw, 4rem);
+    align-items: center;
+  }
+
+  .eyebrow {
+    color: var(--pink);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: var(--font-size-h2);
+    margin-bottom: 1rem;
+  }
+
+  .lede {
+    color: var(--text-muted);
+    max-width: 40ch;
+    margin-bottom: 1.35rem;
+    font-size: var(--font-size-lede);
+  }
+
+  .bullets {
+    display: grid;
+    gap: 0.65rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .bullets li {
+    position: relative;
+    padding-left: 1.35rem;
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 50%;
+    background: var(--matcha-bright);
+  }
+
+  .grid-stage {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.75rem;
+    aspect-ratio: 1.05;
+    width: min(100%, var(--visual-size));
+    margin-inline: auto;
+  }
+
+  .tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 0.55rem;
+    padding: 0.9rem;
+    border-radius: 1.15rem;
+    border: 1.5px solid var(--border);
+    background:
+      linear-gradient(180deg, transparent 35%, rgba(0, 0, 0, 0.45)),
+      radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.12), transparent 45%),
+      #1a1714;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .tile--host {
+    grid-row: span 2;
+    background:
+      linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.5)),
+      radial-gradient(circle at 40% 30%, rgba(240, 116, 156, 0.35), transparent 50%),
+      #1a1714;
+  }
+
+  .tile--muted {
+    opacity: 0.78;
+  }
+
+  .tile span {
+    position: relative;
+    z-index: 1;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .tile__avatar {
+    position: absolute;
+    inset: 18% 18% auto;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #f0749c, #74a12e);
+    filter: saturate(1.1);
+  }
+
+  .tile--host .tile__avatar {
+    inset: 22% 22% auto;
+  }
+
+  .tile__avatar--2 {
+    background: linear-gradient(145deg, #5b8def, #74a12e);
+  }
+  .tile__avatar--3 {
+    background: linear-gradient(145deg, #f0749c, #5b8def);
+  }
+  .tile__avatar--4 {
+    background: linear-gradient(145deg, #6e6760, #2a2622);
+  }
+
+  @media (min-width: 920px) {
+    .rooms__grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+  }
+</style>

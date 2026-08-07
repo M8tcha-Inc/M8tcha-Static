@@ -1,0 +1,139 @@
+---
+const features = [
+  {
+    num: '01',
+    title: 'Discover nearby',
+    body: 'People around you, not across the planet. Location-aware discovery keeps chemistry close to home.',
+    accent: 'matcha',
+  },
+  {
+    num: '02',
+    title: 'Match with intention',
+    body: 'Likes, supers, and matches that feel earned. Less endless swiping - more signal.',
+    accent: 'pink',
+  },
+  {
+    num: '03',
+    title: 'Hang in Rooms',
+    body: 'Jump into live audio and video hangouts. Meet the vibe before you meet for coffee.',
+    accent: 'matcha',
+  },
+];
+---
+
+<section class="product" id="product">
+  <div class="wrap">
+    <div class="product__intro reveal">
+      <p class="eyebrow">The product</p>
+      <h2>Dating that moves <span class="accent">at human speed.</span></h2>
+      <p class="lede">
+        M8tcha blends thoughtful discovery with live Rooms -so you can feel someone out before the
+        awkward first text marathon.
+      </p>
+    </div>
+
+    <div class="feature-list">
+      {
+        features.map((f, i) => (
+          <article class={`feature reveal reveal-delay-${i + 1}`} data-accent={f.accent}>
+            <span class="feature__num">{f.num}</span>
+            <div>
+              <h3>{f.title}</h3>
+              <p>{f.body}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .product {
+    position: relative;
+    z-index: 1;
+    padding: var(--section-space) 0;
+  }
+
+  .product__intro {
+    max-width: 42rem;
+    margin-bottom: clamp(2.5rem, 6vw, 4.5rem);
+  }
+
+  .eyebrow {
+    color: var(--pink);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: var(--font-size-h2);
+    margin-bottom: 1rem;
+  }
+
+  .lede {
+    color: var(--text-muted);
+    max-width: 42ch;
+    font-size: var(--font-size-lede);
+  }
+
+  .feature-list {
+    display: grid;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .feature {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.25rem;
+    padding: clamp(1.4rem, 3vw, 2.4rem);
+    background: var(--bg-elevated);
+    transition: background 0.25s ease;
+  }
+
+  .feature:hover {
+    background: var(--bg-soft);
+  }
+
+  .feature__num {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.2rem, 1rem + 0.6vw, 1.6rem);
+    letter-spacing: -0.03em;
+    color: var(--matcha-bright);
+  }
+
+  .feature[data-accent='pink'] .feature__num {
+    color: var(--pink);
+  }
+
+  h3 {
+    font-size: var(--font-size-h3);
+    margin-bottom: 0.45rem;
+  }
+
+  .feature p {
+    color: var(--text-muted);
+    max-width: 48ch;
+  }
+
+  @media (min-width: 900px) {
+    .feature-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .feature {
+      grid-template-columns: 1fr;
+      min-height: 100%;
+      gap: 2.5rem;
+    }
+  }
+</style>

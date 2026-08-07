@@ -1,0 +1,454 @@
+---
+const phrases = [
+  'Discover nearby',
+  'Live Rooms',
+  'Real matches',
+  'Matcha energy',
+  'Swipe with intention',
+  'Chemistry first',
+];
+---
+
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <h1 class="reveal">
+        <span class="hero__brand">m8tcha</span>
+        <span class="hero__line">
+          Designed for <span class="accent">real chemistry.</span>
+        </span>
+      </h1>
+      <p class="hero__lede reveal reveal-delay-1">
+        Swipe with intention. Match with people nearby who feel like a yes -then hang out live in
+        Rooms.
+      </p>
+      <div class="hero__ctas reveal reveal-delay-2">
+        <a class="btn btn-primary" href="#download">Get M8tcha</a>
+        <a class="btn btn-ghost" href="#product">See how it works</a>
+      </div>
+    </div>
+
+    <div class="hero__visual reveal reveal-delay-2" aria-hidden="true">
+      <div class="stage">
+        <div class="stage__glow stage__glow--pink"></div>
+        <div class="stage__glow stage__glow--matcha"></div>
+        <div class="phone">
+          <div class="phone__notch"></div>
+          <div class="phone__screen">
+            <div class="chip">NEAR YOU · 1.2 KM</div>
+            <div class="profile-card">
+              <div class="profile-card__photo">
+                <div class="avatar-ring"></div>
+                <div class="avatar-face"></div>
+              </div>
+              <div class="profile-card__meta">
+                <strong>Alex, 27</strong>
+                <span>Coffee, late walks, bad puns</span>
+              </div>
+            </div>
+            <div class="actions">
+              <span class="orb orb--pass"></span>
+              <span class="orb orb--like"></span>
+              <span class="orb orb--super"></span>
+            </div>
+            <div class="room-pill">
+              <span class="room-pill__live"></span>
+              3 live in Sunset Hangout
+            </div>
+          </div>
+        </div>
+        <div class="float float--match">It’s a match</div>
+        <div class="float float--room">Join stage</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true" data-marquee>
+    <div class="marquee__track" data-marquee-track>
+      <div class="marquee__group" data-marquee-group>
+        {
+          phrases.map((phrase) => (
+            <>
+              <span>{phrase}</span>
+              <span class="marquee__dot">·</span>
+            </>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const root = document.querySelector('[data-marquee]');
+  const track = root?.querySelector('[data-marquee-track]');
+  const source = root?.querySelector('[data-marquee-group]');
+  if (root && track && source) {
+    const seed = source.cloneNode(true);
+    let resizeTimer;
+
+    const sync = () => {
+      const sample = seed.cloneNode(true);
+      track.replaceChildren(sample);
+
+      let guard = 0;
+      while (sample.scrollWidth < root.offsetWidth && guard < 24) {
+        for (const node of seed.childNodes) {
+          sample.appendChild(node.cloneNode(true));
+        }
+        guard += 1;
+        if (sample.scrollWidth === 0) break;
+      }
+
+      const segmentWidth = sample.getBoundingClientRect().width;
+      track.appendChild(sample.cloneNode(true));
+      track.style.setProperty('--marquee-duration', `${Math.max(18, segmentWidth / 80)}s`);
+      // Restart animation cleanly after rebuild
+      track.style.animation = 'none';
+      void track.offsetWidth;
+      track.style.animation = '';
+    };
+
+    sync();
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(sync, 150);
+    });
+  }
+</script>
+
+<style>
+  .hero {
+    position: relative;
+    z-index: 1;
+    padding: clamp(1.5rem, 3vh, 3.5rem) 0 0;
+    overflow: clip;
+  }
+
+  .hero .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero__grid {
+    display: grid;
+    gap: clamp(1.5rem, 3vw, 3.5rem);
+    align-items: center;
+    min-height: min(62vh, 52rem);
+  }
+
+  h1 {
+    display: grid;
+    gap: 0.45rem;
+    margin-bottom: 1.1rem;
+  }
+
+  .hero__brand {
+    display: block;
+    font-size: var(--font-size-brand);
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    line-height: 0.9;
+    color: var(--text);
+  }
+
+  .hero__line {
+    display: block;
+    font-size: var(--font-size-subhead);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.12;
+    max-width: 16ch;
+    color: var(--text);
+  }
+
+  .hero__lede {
+    max-width: 36ch;
+    color: var(--text-muted);
+    font-size: var(--font-size-lede);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero__ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+  }
+
+  .hero__visual {
+    display: grid;
+    place-items: center;
+  }
+
+  .stage {
+    position: relative;
+    width: min(100%, var(--visual-size));
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+  }
+
+  .stage__glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.55;
+  }
+
+  .stage__glow--pink {
+    width: 55%;
+    height: 55%;
+    top: 8%;
+    left: 5%;
+    background: var(--pink);
+  }
+
+  .stage__glow--matcha {
+    width: 50%;
+    height: 50%;
+    right: 0;
+    bottom: 10%;
+    background: var(--matcha-bright);
+  }
+
+  .phone {
+    position: relative;
+    z-index: 2;
+    width: min(72%, 260px);
+    aspect-ratio: 9 / 17;
+    padding: 0.55rem;
+    border-radius: 2rem;
+    background: linear-gradient(160deg, #2a2622, #141210 60%);
+    border: 1.5px solid color-mix(in srgb, var(--cream) 22%, transparent);
+    box-shadow:
+      0 30px 60px rgba(0, 0, 0, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    animation: float-y 5.5s var(--ease-out) infinite;
+  }
+
+  .phone__notch {
+    width: 36%;
+    height: 0.55rem;
+    margin: 0.35rem auto 0.65rem;
+    border-radius: 999px;
+    background: #0c0b0a;
+  }
+
+  .phone__screen {
+    height: calc(100% - 1.4rem);
+    border-radius: 1.4rem;
+    padding: 0.85rem;
+    background:
+      radial-gradient(circle at 20% 0%, rgba(240, 116, 156, 0.25), transparent 45%),
+      radial-gradient(circle at 90% 20%, rgba(116, 161, 46, 0.2), transparent 40%),
+      #161412;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .chip {
+    align-self: flex-start;
+    padding: 0.25rem 0.55rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--matcha) 25%, transparent);
+    color: var(--matcha-bright);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+  }
+
+  .profile-card {
+    flex: 1;
+    border-radius: 1.1rem;
+    padding: 1rem;
+    background: color-mix(in srgb, #fff 4%, transparent);
+    border: 1px solid color-mix(in srgb, #fff 8%, transparent);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 0.75rem;
+  }
+
+  .profile-card__photo {
+    flex: 1;
+    display: grid;
+    place-items: center;
+    position: relative;
+  }
+
+  .avatar-ring {
+    position: absolute;
+    width: 78%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 2px dashed color-mix(in srgb, var(--pink) 55%, transparent);
+    animation: spin 18s linear infinite;
+  }
+
+  .avatar-face {
+    width: 58%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background:
+      linear-gradient(145deg, #f0749c, #74a12e 70%),
+      radial-gradient(circle at 30% 30%, #fff8, transparent 40%);
+  }
+
+  .profile-card__meta {
+    display: grid;
+    gap: 0.15rem;
+  }
+
+  .profile-card__meta strong {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+  }
+
+  .profile-card__meta span {
+    color: var(--text-muted);
+    font-size: 0.72rem;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.65rem;
+  }
+
+  .orb {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 1.5px solid color-mix(in srgb, #fff 15%, transparent);
+  }
+
+  .orb--pass {
+    background: #2a2622;
+  }
+  .orb--like {
+    background: var(--pink);
+    transform: scale(1.12);
+  }
+  .orb--super {
+    background: #5b8def;
+  }
+
+  .room-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 0.65rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--matcha) 18%, #0c0b0a);
+    color: var(--matcha-bright);
+    font-size: 0.68rem;
+    font-weight: 600;
+  }
+
+  .room-pill__live {
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: var(--matcha-bright);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--matcha-bright) 25%, transparent);
+  }
+
+  .float {
+    position: absolute;
+    z-index: 3;
+    padding: 0.55rem 0.85rem;
+    border-radius: 999px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.82rem;
+    border: 1.5px solid color-mix(in srgb, var(--cream) 20%, transparent);
+    background: color-mix(in srgb, var(--bg) 80%, transparent);
+    backdrop-filter: blur(10px);
+    animation: float-y 4.2s var(--ease-out) infinite;
+  }
+
+  .float--match {
+    top: 12%;
+    right: 0;
+    color: var(--pink);
+    animation-delay: -1.2s;
+  }
+
+  .float--room {
+    bottom: 16%;
+    left: 0;
+    color: var(--matcha-bright);
+    animation-delay: -2.4s;
+  }
+
+  .marquee {
+    margin-top: clamp(3rem, 6vh, 6rem);
+    border-block: 1px solid var(--border);
+    padding-block: clamp(0.9rem, 1.2vw, 1.35rem);
+    overflow: hidden;
+    width: 100%;
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  }
+
+  .marquee__track {
+    display: flex;
+    width: max-content;
+    animation: marquee var(--marquee-duration, 28s) linear infinite;
+    will-change: transform;
+  }
+
+  .marquee__group {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 1.5rem;
+    padding-inline-end: 1.5rem;
+    font-family: var(--font-display);
+    font-size: clamp(1.1rem, 0.9rem + 0.8vw, 1.85rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  .marquee__dot {
+    opacity: 0.7;
+  }
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes float-y {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media (min-width: 920px) {
+    .hero__grid {
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: clamp(2rem, 3vw, 4.5rem);
+    }
+  }
+
+  @media (min-width: 1600px) {
+    .hero__grid {
+      min-height: min(58vh, 58rem);
+    }
+  }
+</style>

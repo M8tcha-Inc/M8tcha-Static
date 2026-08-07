@@ -1,0 +1,289 @@
+---
+const links = [
+  { href: '/#product', label: 'Product' },
+  { href: '/#rooms', label: 'Rooms' },
+  { href: '/#process', label: 'How it works' },
+  { href: '/#manifesto', label: 'Manifesto' },
+];
+---
+
+<div class="announcement">
+  <p>
+    <span class="announcement__pulse" aria-hidden="true"></span>
+    M8tcha+ is live - unlock more likes, boosts, and room perks.
+  </p>
+  <a href="/#download">Get the app</a>
+</div>
+
+<header class="header">
+  <div class="wrap header__inner">
+    <a class="logo" href="/" aria-label="M8tcha home">
+      <img class="logo__mark" src="/favicon.svg" alt="" width="88" height="88" />
+      <span class="logo__word">m8tcha</span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      {
+        links.map((link) => (
+          <a href={link.href}>{link.label}</a>
+        ))
+      }
+    </nav>
+
+    <div class="header__actions">
+      <a class="btn btn-primary header__cta" href="/#download">Download</a>
+      <button class="menu-btn" type="button" data-menu-toggle aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" data-mobile-nav hidden>
+  <button class="mobile-nav__close" type="button" data-menu-close aria-label="Close menu">
+    <span aria-hidden="true">×</span>
+  </button>
+  <nav aria-label="Mobile">
+    {
+      links.map((link) => (
+        <a href={link.href} data-menu-close>
+          {link.label}
+        </a>
+      ))
+    }
+    <a class="btn btn-primary" href="/#download" data-menu-close>Download</a>
+  </nav>
+</div>
+
+<script>
+  const toggle = document.querySelector('[data-menu-toggle]');
+  const panel = document.querySelector('[data-mobile-nav]');
+  const closeLinks = document.querySelectorAll('[data-menu-close]');
+
+  function setOpen(open: boolean) {
+    if (!toggle || !panel) return;
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    if (open) panel.removeAttribute('hidden');
+    else panel.setAttribute('hidden', '');
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+
+  toggle?.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') !== 'true';
+    setOpen(open);
+  });
+  closeLinks.forEach((el) => el.addEventListener('click', () => setOpen(false)));
+</script>
+
+<style>
+  .announcement {
+    position: relative;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 0.55rem var(--gutter);
+    background: var(--matcha-bright);
+    color: #0c0b0a;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .announcement a {
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    background: #0c0b0a;
+    color: #f5f0eb;
+    font-size: 0.8rem;
+  }
+
+  .announcement__pulse {
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-right: 0.45rem;
+    border-radius: 50%;
+    background: #0c0b0a;
+    animation: pulse 1.6s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.45;
+      transform: scale(0.85);
+    }
+  }
+
+  .header {
+    position: sticky;
+    top: 0.75rem;
+    z-index: 50;
+    padding-inline: var(--gutter);
+    margin-top: 0.75rem;
+  }
+
+  .header__inner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-height: var(--nav-h);
+    padding: 0.45rem 0.7rem 0.45rem 0.55rem;
+    border: 1.5px solid color-mix(in srgb, var(--cream) 28%, transparent);
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--bg) 72%, transparent);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  @media (max-width: 879px) {
+    .header {
+      padding-inline: 0.65rem;
+      top: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .header__inner.wrap {
+      width: 100%;
+    }
+  }
+
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    flex-shrink: 0;
+  }
+
+  .logo__mark {
+    width: var(--logo-size);
+    height: var(--logo-size);
+    border-radius: calc(var(--logo-size) * 0.2);
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .logo__word {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.2rem, 1rem + 0.6vw, 1.7rem);
+    letter-spacing: -0.04em;
+  }
+
+  .nav {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 0.15rem;
+    flex: 1;
+  }
+
+  .nav a {
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    font-weight: 500;
+    transition: color 0.2s ease, background 0.2s ease;
+  }
+
+  .nav a:hover {
+    color: var(--text);
+    background: color-mix(in srgb, var(--cream) 8%, transparent);
+  }
+
+  .header__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: auto;
+  }
+
+  .header__cta {
+    display: none;
+    min-height: 2.5rem;
+    padding-inline: 1.15rem;
+    font-size: 0.88rem;
+  }
+
+  .menu-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 999px;
+    border: 1.5px solid var(--border);
+    display: grid;
+    place-content: center;
+    gap: 5px;
+    background: var(--bg-elevated);
+  }
+
+  .menu-btn span {
+    display: block;
+    width: 14px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+  }
+
+  .mobile-nav {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    padding: 6rem var(--gutter) 2rem;
+    background: color-mix(in srgb, var(--bg) 94%, transparent);
+    backdrop-filter: blur(18px);
+  }
+
+  .mobile-nav__close {
+    position: absolute;
+    top: 1.1rem;
+    right: var(--gutter);
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 12px;
+    border: 1.5px solid var(--border);
+    display: grid;
+    place-items: center;
+    background: var(--bg-elevated);
+    font-size: 1.75rem;
+    line-height: 1;
+    color: var(--text);
+  }
+
+  .mobile-nav__close:hover {
+    border-color: color-mix(in srgb, var(--cream) 45%, transparent);
+  }
+
+  .mobile-nav nav {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .mobile-nav a:not(.btn) {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 7vw, 2.4rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+  }
+
+  @media (min-width: 880px) {
+    .nav {
+      display: flex;
+    }
+
+    .header__cta {
+      display: inline-flex;
+    }
+
+    .menu-btn {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,122 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div class="footer__brand">
+      <a class="wordmark" href="/">m8tcha</a>
+      <p>Designed for real chemistry.</p>
+    </div>
+
+    <div class="footer__cols">
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="/#product">Discover</a></li>
+          <li><a href="/#rooms">Rooms</a></li>
+          <li><a href="/#process">How it works</a></li>
+          <li><a href="/#manifesto">Manifesto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="mailto:hello@m8tcha.com">Contact</a></li>
+          <li><a href="/privacy">Privacy</a></li>
+          <li><a href="/terms">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap footer__bar">
+    <p>© {year} M8tcha. All rights reserved.</p>
+    <button type="button" data-theme-toggle class="footer__theme">Toggle theme</button>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    position: relative;
+    z-index: 1;
+    padding: 3rem 0 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .footer__grid {
+    display: grid;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .wordmark {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.6rem, 1.2rem + 0.8vw, 2.25rem);
+    letter-spacing: -0.04em;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer__brand p {
+    color: var(--text-muted);
+  }
+
+  .footer__cols {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  h3 {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.85rem;
+    font-weight: 700;
+  }
+
+  li + li {
+    margin-top: 0.45rem;
+  }
+
+  a {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  a:hover {
+    color: var(--matcha-bright);
+  }
+
+  .footer__bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  .footer__theme {
+    color: var(--text-muted);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  @media (min-width: 800px) {
+    .footer__grid {
+      grid-template-columns: 1.2fr 1fr;
+      align-items: start;
+    }
+
+    .footer__cols {
+      justify-self: end;
+      width: min(100%, 320px);
+    }
+  }
+</style>

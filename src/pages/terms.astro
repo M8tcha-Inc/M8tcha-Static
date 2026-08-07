@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Terms -M8tcha" description="Terms of use for M8tcha.">
+  <Nav />
+  <main class="legal wrap">
+    <h1>Terms</h1>
+    <p>
+      By using M8tcha you agree to be respectful, truthful in your profile, and mindful of others in
+      Rooms and messages. Full terms coming soon -questions:
+      <a href="mailto:hello@m8tcha.com">hello@m8tcha.com</a>.
+    </p>
+    <a class="back" href="/">← Back home</a>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .legal {
+    position: relative;
+    z-index: 1;
+    padding: 4rem 0 5rem;
+    max-width: 40rem;
+  }
+
+  h1 {
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  a {
+    color: var(--matcha-bright);
+  }
+
+  .back {
+    font-weight: 600;
+  }
+</style>
