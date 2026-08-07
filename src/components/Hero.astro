@@ -35,11 +35,19 @@ const phrases = [
         <div class="phone">
           <div class="phone__notch"></div>
           <div class="phone__screen">
-            <div class="chip">NEAR YOU · 1.2 KM</div>
+            <div class="chip">NEAR YOU · 0.7 MI</div>
             <div class="profile-card">
               <div class="profile-card__photo">
+                <img
+                  class="avatar-face"
+                  src="/images/person-1.jpg"
+                  alt=""
+                  width="180"
+                  height="180"
+                  loading="lazy"
+                  decoding="async"
+                />
                 <div class="avatar-ring"></div>
-                <div class="avatar-face"></div>
               </div>
               <div class="profile-card__meta">
                 <strong>Alex, 27</strong>
@@ -219,11 +227,11 @@ const phrases = [
     aspect-ratio: 9 / 17;
     padding: 0.55rem;
     border-radius: 2rem;
-    background: linear-gradient(160deg, #2a2622, #141210 60%);
-    border: 1.5px solid color-mix(in srgb, var(--cream) 22%, transparent);
+    background: linear-gradient(160deg, var(--surface), var(--bg-elevated) 60%);
+    border: 1.5px solid var(--border);
     box-shadow:
-      0 30px 60px rgba(0, 0, 0, 0.35),
-      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      0 30px 60px color-mix(in srgb, var(--ink) 28%, transparent),
+      inset 0 1px 0 color-mix(in srgb, var(--cream) 8%, transparent);
     animation: float-y 5.5s var(--ease-out) infinite;
   }
 
@@ -232,7 +240,7 @@ const phrases = [
     height: 0.55rem;
     margin: 0.35rem auto 0.65rem;
     border-radius: 999px;
-    background: #0c0b0a;
+    background: var(--ink);
   }
 
   .phone__screen {
@@ -240,9 +248,10 @@ const phrases = [
     border-radius: 1.4rem;
     padding: 0.85rem;
     background:
-      radial-gradient(circle at 20% 0%, rgba(240, 116, 156, 0.25), transparent 45%),
-      radial-gradient(circle at 90% 20%, rgba(116, 161, 46, 0.2), transparent 40%),
-      #161412;
+      radial-gradient(circle at 20% 0%, color-mix(in srgb, var(--pink) 28%, transparent), transparent 45%),
+      radial-gradient(circle at 90% 20%, color-mix(in srgb, var(--matcha) 22%, transparent), transparent 40%),
+      var(--bg);
+    color: var(--text);
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
@@ -252,7 +261,7 @@ const phrases = [
     align-self: flex-start;
     padding: 0.25rem 0.55rem;
     border-radius: 999px;
-    background: color-mix(in srgb, var(--matcha) 25%, transparent);
+    background: var(--matcha-muted);
     color: var(--matcha-bright);
     font-size: 0.62rem;
     font-weight: 700;
@@ -263,8 +272,8 @@ const phrases = [
     flex: 1;
     border-radius: 1.1rem;
     padding: 1rem;
-    background: color-mix(in srgb, #fff 4%, transparent);
-    border: 1px solid color-mix(in srgb, #fff 8%, transparent);
+    background: color-mix(in srgb, var(--cream) 6%, var(--bg-elevated));
+    border: 1px solid var(--border);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -288,12 +297,15 @@ const phrases = [
   }
 
   .avatar-face {
+    position: relative;
+    z-index: 1;
     width: 58%;
-    aspect-ratio: 1;
+    height: auto;
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
-    background:
-      linear-gradient(145deg, #f0749c, #74a12e 70%),
-      radial-gradient(circle at 30% 30%, #fff8, transparent 40%);
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 8px 24px color-mix(in srgb, var(--ink) 28%, transparent);
   }
 
   .profile-card__meta {
@@ -304,6 +316,7 @@ const phrases = [
   .profile-card__meta strong {
     font-family: var(--font-display);
     font-size: 1.05rem;
+    color: var(--text);
   }
 
   .profile-card__meta span {
@@ -321,11 +334,11 @@ const phrases = [
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
-    border: 1.5px solid color-mix(in srgb, #fff 15%, transparent);
+    border: 1.5px solid var(--border);
   }
 
   .orb--pass {
-    background: #2a2622;
+    background: var(--surface);
   }
   .orb--like {
     background: var(--pink);
@@ -341,7 +354,7 @@ const phrases = [
     gap: 0.4rem;
     padding: 0.45rem 0.65rem;
     border-radius: 999px;
-    background: color-mix(in srgb, var(--matcha) 18%, #0c0b0a);
+    background: var(--matcha-muted);
     color: var(--matcha-bright);
     font-size: 0.68rem;
     font-weight: 600;

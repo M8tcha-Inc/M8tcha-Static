@@ -6,20 +6,16 @@
     <div class="rooms__visual reveal" aria-hidden="true">
       <div class="grid-stage">
         <div class="tile tile--host">
-          <div class="tile__avatar"></div>
+          <img class="tile__photo" src="/images/person-5.jpg" alt="" width="320" height="400" loading="lazy" decoding="async" />
           <span>You · Host</span>
         </div>
         <div class="tile">
-          <div class="tile__avatar tile__avatar--2"></div>
+          <img class="tile__photo" src="/images/person-2.jpg" alt="" width="240" height="300" loading="lazy" decoding="async" />
           <span>Sam</span>
         </div>
         <div class="tile">
-          <div class="tile__avatar tile__avatar--3"></div>
+          <img class="tile__photo" src="/images/person-3.jpg" alt="" width="240" height="300" loading="lazy" decoding="async" />
           <span>Jordan</span>
-        </div>
-        <div class="tile tile--muted">
-          <div class="tile__avatar tile__avatar--4"></div>
-          <span>Raised hand</span>
         </div>
       </div>
     </div>
@@ -121,24 +117,30 @@
     padding: 0.9rem;
     border-radius: 1.15rem;
     border: 1.5px solid var(--border);
-    background:
-      linear-gradient(180deg, transparent 35%, rgba(0, 0, 0, 0.45)),
-      radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.12), transparent 45%),
-      #1a1714;
     overflow: hidden;
     position: relative;
+    min-height: 0;
+    background: #1a1714;
   }
 
   .tile--host {
     grid-row: span 2;
-    background:
-      linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.5)),
-      radial-gradient(circle at 40% 30%, rgba(240, 116, 156, 0.35), transparent 50%),
-      #1a1714;
   }
 
-  .tile--muted {
-    opacity: 0.78;
+  .tile__photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .tile::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 42%, rgba(0, 0, 0, 0.72));
+    pointer-events: none;
   }
 
   .tile span {
@@ -146,29 +148,6 @@
     z-index: 1;
     font-size: 0.8rem;
     font-weight: 600;
-  }
-
-  .tile__avatar {
-    position: absolute;
-    inset: 18% 18% auto;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background: linear-gradient(145deg, #f0749c, #74a12e);
-    filter: saturate(1.1);
-  }
-
-  .tile--host .tile__avatar {
-    inset: 22% 22% auto;
-  }
-
-  .tile__avatar--2 {
-    background: linear-gradient(145deg, #5b8def, #74a12e);
-  }
-  .tile__avatar--3 {
-    background: linear-gradient(145deg, #f0749c, #5b8def);
-  }
-  .tile__avatar--4 {
-    background: linear-gradient(145deg, #6e6760, #2a2622);
   }
 
   @media (min-width: 920px) {
