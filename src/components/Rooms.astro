@@ -6,15 +6,15 @@
     <div class="rooms__visual reveal" aria-hidden="true">
       <div class="grid-stage">
         <div class="tile tile--host">
-          <img class="tile__photo" src="/images/person-5.jpg" alt="" width="320" height="400" loading="lazy" decoding="async" />
+          <img class="tile__photo" src="/images/person-5.jpg?v=2" alt="" width="320" height="400" loading="lazy" decoding="async" />
           <span>You · Host</span>
         </div>
         <div class="tile">
-          <img class="tile__photo" src="/images/person-2.jpg" alt="" width="240" height="300" loading="lazy" decoding="async" />
+          <img class="tile__photo" src="/images/person-2.jpg?v=2" alt="" width="240" height="300" loading="lazy" decoding="async" />
           <span>Sam</span>
         </div>
         <div class="tile">
-          <img class="tile__photo" src="/images/person-3.jpg" alt="" width="240" height="300" loading="lazy" decoding="async" />
+          <img class="tile__photo" src="/images/person-3.jpg?v=2" alt="" width="240" height="300" loading="lazy" decoding="async" />
           <span>Jordan</span>
         </div>
       </div>
@@ -101,11 +101,12 @@
 
   .grid-stage {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: 1.15fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 0.75rem;
-    aspect-ratio: 1.05;
-    width: min(100%, var(--visual-size));
+    gap: 0.65rem;
+    width: 100%;
+    aspect-ratio: 0.92;
+    min-height: min(72vw, 28rem);
     margin-inline: auto;
   }
 
@@ -114,7 +115,7 @@
     flex-direction: column;
     justify-content: flex-end;
     gap: 0.55rem;
-    padding: 0.9rem;
+    padding: 0.85rem;
     border-radius: 1.15rem;
     border: 1.5px solid var(--border);
     overflow: hidden;
@@ -146,7 +147,7 @@
   .tile span {
     position: relative;
     z-index: 1;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 600;
   }
 
@@ -154,6 +155,13 @@
     .rooms__grid {
       grid-template-columns: 1fr 1fr;
       gap: 4rem;
+    }
+
+    .grid-stage {
+      width: min(100%, var(--visual-size));
+      aspect-ratio: 1.05;
+      min-height: 0;
+      gap: 0.75rem;
     }
   }
 </style>

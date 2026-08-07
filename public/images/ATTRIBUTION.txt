@@ -1,7 +1,7 @@
 Photos from Unsplash (https://unsplash.com/license) — free to use.
 
-- person-1.jpg — https://unsplash.com/photos/3TLl_97HNJo
-- person-2.jpg — https://unsplash.com/photos/iFgRcqHznqg
-- person-3.jpg — https://unsplash.com/photos/WNoLnJo7tS8
-- person-4.jpg — https://unsplash.com/photos/ZHvM3XIOHoE
-- person-5.jpg — https://unsplash.com/photos/mEZ3PoFGs_k
+- person-1.jpg — https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e
+- person-2.jpg — https://images.unsplash.com/photo-1488161628813-04466f872be2
+- person-3.jpg — https://images.unsplash.com/photo-1531746020798-e6953c6e8e04
+- person-4.jpg — https://images.unsplash.com/photo-1500648767791-00dcc994a43e
+- person-5.jpg — https://images.unsplash.com/photo-1539571696357-5a69c17a67c6
