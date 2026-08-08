@@ -2,17 +2,512 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+
+const lastUpdated = 'August 8, 2026';
+const privacyEmail = 'hello@m8tcha.com';
 ---
 
-<Layout title="Privacy -M8tcha" description="How M8tcha handles your data.">
+<Layout
+  title="Privacy Policy - M8tcha"
+  description="How M8tcha collects, uses, discloses, and protects your personal data."
+>
   <Nav />
   <main class="legal wrap">
-    <h1>Privacy</h1>
+    <p class="eyebrow">Legal</p>
+    <h1>M8tcha Privacy Policy</h1>
+    <p class="updated"><strong>Last Updated: {lastUpdated}</strong></p>
+
     <p>
-      M8tcha uses your account details, profile content, and location (with permission) to power
-      discovery, matching, and Rooms. We don’t sell your personal data. Full policy coming soon —
-      questions: <a href="mailto:hello@m8tcha.com">hello@m8tcha.com</a>.
+      This Privacy Policy explains how M8tcha, Inc. ("<strong>M8tcha</strong>," "<strong>we</strong>,"
+      "<strong>us</strong>," or "<strong>our</strong>"), the developer of the M8tcha: Find Your People
+      mobile application and related websites and services (collectively, the "<strong>App</strong>"),
+      collects, uses, discloses, and protects personal information when you use the App.
     </p>
+    <p>
+      This Policy is designed to meet requirements under applicable U.S. privacy laws (including the
+      California Consumer Privacy Act as amended by the CPRA ("<strong>CCPA</strong>")), the EU
+      General Data Protection Regulation ("<strong>GDPR</strong>"), the UK GDPR, and Apple App Store
+      / Google Play disclosure requirements. If you do not agree with this Privacy Policy, please do
+      not use the App.
+    </p>
+
+    <h2>1. Who We Are</h2>
+    <ul>
+      <li><strong>Company / Data Controller:</strong> M8tcha, Inc.</li>
+      <li><strong>Jurisdiction:</strong> Delaware C Corporation, United States</li>
+      <li>
+        <strong>Privacy Contact:</strong>
+        <a href={`mailto:${privacyEmail}`}>{privacyEmail}</a>
+      </li>
+      <li>
+        <strong>EU Representative (Art. 27 GDPR):</strong> Not applicable — we are established in
+        the United States
+      </li>
+      <li>
+        <strong>Data Protection Officer:</strong> We have not appointed a DPO as one is not required
+        under Art. 37 GDPR
+      </li>
+    </ul>
+
+    <h2>2. Eligibility &amp; Age Requirement (COPPA)</h2>
+    <p>
+      M8tcha is a social matching app intended <strong>only for users aged 18 and over</strong>. The
+      App is not directed to children under 13, and we do not knowingly collect personal information
+      from children under 13 in accordance with the U.S. Children's Online Privacy Protection Act
+      ("<strong>COPPA</strong>"). We also do not knowingly collect personal information from anyone
+      under 18. If we learn that we have collected data from an underage user, we will delete it
+      promptly. If you believe a minor is using M8tcha, contact us at{' '}
+      <a href={`mailto:${privacyEmail}`}>{privacyEmail}</a>.
+    </p>
+
+    <h2>3. Notice at Collection / Categories of Personal Information</h2>
+    <p>
+      This section also serves as our <strong>Notice at Collection</strong> under the CCPA. We
+      collect the categories of personal information described below for the business and commercial
+      purposes listed. We do <strong>not sell</strong> personal information and do{' '}
+      <strong>not share</strong> personal information for cross-context behavioral advertising as
+      those terms are defined under the CCPA. We do not have actual knowledge that we sell or share
+      the personal information of consumers under 16 years of age.
+    </p>
+    <p>
+      The table below is also intended to align with M8tcha's Apple App Privacy "Nutrition Label" and
+      Google Play Data safety disclosures.
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>CCPA Category</th>
+            <th>Examples We Collect</th>
+            <th>Purpose</th>
+            <th>Sold / Shared?</th>
+            <th>Retention</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Identifiers</td>
+            <td>Name, email, phone, user ID, device ID, IP address, account credentials</td>
+            <td>
+              Account creation, login, security, customer support, fraud prevention, App
+              functionality
+            </td>
+            <td>No</td>
+            <td>While account is active + up to 30 days after deletion (longer if legally required)</td>
+          </tr>
+          <tr>
+            <td>Customer records / contact info</td>
+            <td>Name, email, phone, support communications</td>
+            <td>Account management, verification (SMS/OTP), support, security notices</td>
+            <td>No</td>
+            <td>Account life + up to 30 days; support records up to 12 months</td>
+          </tr>
+          <tr>
+            <td>Protected classification characteristics (if you choose to provide)</td>
+            <td>
+              Gender, pronouns, sexual orientation, relationship preferences, religion, politics, or
+              similar profile fields you opt to share
+            </td>
+            <td>Matching and profile display you opt into</td>
+            <td>No</td>
+            <td>Until you remove it or delete your account</td>
+          </tr>
+          <tr>
+            <td>Commercial information</td>
+            <td>Subscription plan, purchase history, payment status (payment card data is processed by payment providers, not stored by M8tcha in full)</td>
+            <td>Process purchases, manage subscriptions, prevent fraud, customer support</td>
+            <td>No</td>
+            <td>While needed for billing, tax, fraud, and legal obligations</td>
+          </tr>
+          <tr>
+            <td>Internet / electronic activity</td>
+            <td>Product interaction, in-App usage logs, crash and performance diagnostics</td>
+            <td>Analytics, personalization, advertising/marketing (with consent where required), App improvement, security</td>
+            <td>No</td>
+            <td>Generally up to 12 months, then aggregated/anonymized where feasible</td>
+          </tr>
+          <tr>
+            <td>Geolocation data (precise)</td>
+            <td>Precise location from your device (with permission)</td>
+            <td>Nearby matching, distance features, safety/fraud signals</td>
+            <td>No</td>
+            <td>While needed for matching/safety features or until you revoke permission / delete account</td>
+          </tr>
+          <tr>
+            <td>Audio, electronic, visual information</td>
+            <td>Profile photos/videos, Room media you choose to share</td>
+            <td>Profile display, messaging/Rooms, App functionality</td>
+            <td>No</td>
+            <td>While account is active + up to 30 days after deletion</td>
+          </tr>
+          <tr>
+            <td>Inferences</td>
+            <td>Preferences or compatibility signals derived from profile and product interaction</td>
+            <td>Improve matching quality and personalize experience</td>
+            <td>No</td>
+            <td>While account is active or until no longer needed for matching</td>
+          </tr>
+          <tr>
+            <td>Sensitive personal information (CPRA)</td>
+            <td>
+              Precise geolocation; account login credentials; contents of messages (to deliver the
+              service); and any sexual orientation, religious/philosophical beliefs, or similar
+              sensitive profile attributes you voluntarily provide
+            </td>
+            <td>
+              Provide the App you request (matching, messaging, security). We do{' '}
+              <strong>not</strong> use or disclose sensitive personal information to infer
+              characteristics for advertising, or for purposes outside those permitted under CCPA
+              §1798.121 / CPPA Reg. §7027(m)
+            </td>
+            <td>No</td>
+            <td>Same as related category above; sensitive profile fields deleted when you remove them or delete your account</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      <strong
+        >We do not collect categories of personal information beyond those described above and
+        disclosed in our App Store / Play Store product pages.</strong
+      >{' '}
+      We will not collect additional categories, or use collected information for materially
+      different, unrelated, or incompatible purposes, without providing notice as required by law.
+    </p>
+
+    <h3>Sources of personal information</h3>
+    <ul>
+      <li>
+        <strong>Directly from you:</strong> registration, profile, photos/videos, messages, support
+        requests, preferences, and permissions you grant.
+      </li>
+      <li>
+        <strong>Automatically from your device:</strong> device identifiers, diagnostics, usage
+        data, and location (if enabled).
+      </li>
+      <li>
+        <strong>From service providers / platforms:</strong> payment confirmation from Apple, Google
+        Play, or Stripe; SMS delivery status from Twilio; security and infrastructure logs from
+        hosting providers.
+      </li>
+      <li>
+        <strong>From other users:</strong> reports, blocks, and content they share that may
+        reference you.
+      </li>
+    </ul>
+
+    <h3>Sensitive data — special category data (Art. 9 GDPR) &amp; U.S. sensitive PI</h3>
+    <p>
+      Certain profile fields (e.g., sexual orientation, religious views, or similar attributes you
+      voluntarily add) may constitute "special category data" under Article 9 GDPR and/or "sensitive
+      personal information" under the CCPA.{' '}
+      <strong
+        >We only process optional sensitive profile attributes with your affirmative choice to
+        provide them</strong
+      >{' '}
+      (and, where GDPR applies, your explicit consent). You may withdraw consent and delete this
+      data at any time in <strong>Settings &gt; Profile</strong>. We never use sensitive profile
+      attributes for advertising or marketing.
+    </p>
+
+    <h2>4. How We Use Your Data (Purposes &amp; Legal Bases)</h2>
+    <p>
+      Under U.S. law, we use personal information for the business and commercial purposes described
+      in this Policy (providing the App, security, analytics, customer support, marketing with
+      required consent/opt-out rights, and legal compliance). Where GDPR/UK GDPR applies, we also
+      rely on the legal bases below.
+    </p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Purpose</th>
+            <th>Data Used</th>
+            <th>GDPR Legal Basis (where applicable)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Creating and managing your account</td>
+            <td>Name, Email, Phone, User ID</td>
+            <td>Art. 6(1)(b) — Contract</td>
+          </tr>
+          <tr>
+            <td>Matching you with other users</td>
+            <td>Location, Sensitive Info, Photos, Product Interaction</td>
+            <td>Art. 6(1)(a) — Consent (Art. 9(2)(a) for sensitive info)</td>
+          </tr>
+          <tr>
+            <td>Displaying your profile to other users</td>
+            <td>Name, Photos, Sensitive Info</td>
+            <td>Art. 6(1)(a) — Consent</td>
+          </tr>
+          <tr>
+            <td>Fraud prevention &amp; platform safety</td>
+            <td>Device ID, User ID, Precise Location</td>
+            <td>Art. 6(1)(f) — Legitimate interest</td>
+          </tr>
+          <tr>
+            <td>Customer support</td>
+            <td>Email, Support Communications</td>
+            <td>Art. 6(1)(b) — Contract</td>
+          </tr>
+          <tr>
+            <td>App analytics &amp; improvement</td>
+            <td>Product Interaction, Crash Data, Performance Data</td>
+            <td>Art. 6(1)(f) — Legitimate interest</td>
+          </tr>
+          <tr>
+            <td>Advertising &amp; marketing (ours, and/or third-party)</td>
+            <td>Product Interaction</td>
+            <td>Art. 6(1)(a) — Consent (see §5)</td>
+          </tr>
+          <tr>
+            <td>Legal compliance, safety investigations</td>
+            <td>Any of the above, as required</td>
+            <td>Art. 6(1)(c) — Legal obligation</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>5. Tracking, Cookies &amp; Marketing Communications</h2>
+    <h3>App Tracking Transparency (ATT)</h3>
+    <p>
+      Where we or our partners use your <strong>Product Interaction</strong> data for advertising or
+      marketing purposes that constitute "tracking" under Apple's guidelines, we will present
+      Apple's <strong>App Tracking Transparency</strong> prompt before doing so. You can change your
+      choice anytime in <strong>iOS Settings &gt; Privacy &amp; Security &gt; Tracking</strong>. On
+      Android, you can manage similar advertising preferences in your device settings.
+    </p>
+    <p>
+      If you decline tracking, we will not track you across apps/websites for that purpose, though we
+      may still use limited data for first-party analytics and core App functionality.
+    </p>
+
+    <h3>Email, push, and SMS</h3>
+    <p>
+      We may send transactional messages (account security, receipts, service notices). Where we send
+      marketing emails, you can opt out via the unsubscribe link. Where we send marketing SMS, we
+      obtain any consent required by the Telephone Consumer Protection Act ("<strong>TCPA</strong>")
+      and related laws; reply STOP to opt out of marketing SMS (message and data rates may apply).
+      Push notifications can be controlled in your device settings.
+    </p>
+
+    <h2>6. Who We Share Data With</h2>
+    <p>
+      We disclose personal information to the following categories of recipients for the business
+      purposes described in this Policy. In the preceding 12 months, we have disclosed the categories
+      listed in §3 to service providers/contractors for business purposes (hosting, storage,
+      payments, messaging, analytics/diagnostics, and support). We have{' '}
+      <strong>not sold or shared</strong> personal information in the preceding 12 months.
+    </p>
+    <ul>
+      <li>
+        <strong>Other Users:</strong> Your name, photos, and profile details (including any
+        sensitive info you choose to add) are visible to other users as part of matching.
+      </li>
+      <li>
+        <strong>Service providers / contractors:</strong> Google Cloud (hosting), Cloudflare R2
+        (media storage), Stripe / Apple / Google Play (payments), Twilio (SMS/OTP), and email
+        delivery providers. These parties process data on our behalf under contract and are not
+        permitted to retain, use, or disclose it for their own purposes except as allowed by law.
+      </li>
+      <li>
+        <strong>Advertising partners</strong> (only with your consent where required; see §5).
+      </li>
+      <li>
+        <strong>Legal &amp; safety:</strong> Law enforcement, regulators, or third parties where
+        required by law, to protect users' safety, or to investigate fraud/abuse/Terms violations.
+      </li>
+      <li>
+        <strong>Business transfers:</strong> In connection with a merger, acquisition, financing, or
+        sale of assets, subject to this Privacy Policy continuing to apply or notice as required.
+      </li>
+    </ul>
+    <p>
+      <strong>We do not sell your personal information</strong> and we do not share it for
+      cross-context behavioral advertising. If that ever changes, we will update this Policy and
+      provide a "Do Not Sell or Share My Personal Information" link / mechanism as required.
+    </p>
+
+    <h2>7. International Data Transfers</h2>
+    <p>
+      M8tcha is based in the United States. If you use the App from outside the U.S., your
+      information will be processed in the United States and possibly other countries. Where GDPR/UK
+      GDPR requires safeguards for transfers from the EU/EEA/UK, we rely on Standard Contractual
+      Clauses, the UK International Data Transfer Addendum, and/or adequacy decisions as applicable.
+      Contact <a href={`mailto:${privacyEmail}`}>{privacyEmail}</a> to request information about
+      relevant safeguards.
+    </p>
+
+    <h2>8. Data Retention</h2>
+    <p>
+      We retain personal information only as long as reasonably necessary for the purposes described
+      in this Policy, including to provide the App, comply with legal obligations, resolve disputes,
+      and enforce agreements. Category-level retention is summarized in §3. In general:
+    </p>
+    <ul>
+      <li>
+        <strong>Account &amp; profile data:</strong> while active, then up to 30 days after deletion
+        for recovery, then deleted or anonymized.
+      </li>
+      <li>
+        <strong>Sensitive profile attributes:</strong> deleted when you remove them or delete your
+        account.
+      </li>
+      <li><strong>Support records:</strong> up to 12 months.</li>
+      <li>
+        <strong>Diagnostics/analytics:</strong> up to 12 months, then aggregated/anonymized where
+        feasible.
+      </li>
+      <li>
+        <strong>Legal/safety records</strong> (e.g., fraud or harassment reports) may be retained
+        longer as required by law.
+      </li>
+    </ul>
+
+    <h2>9. Your Rights (GDPR / UK GDPR)</h2>
+    <p>If you are located in the EEA, UK, or Switzerland, you have the right to:</p>
+    <ul>
+      <li><strong>Access</strong> the personal data we hold about you</li>
+      <li><strong>Rectify</strong> inaccurate or incomplete data</li>
+      <li><strong>Erase</strong> your data ("right to be forgotten")</li>
+      <li><strong>Restrict</strong> or <strong>object</strong> to our processing</li>
+      <li>
+        <strong>Data portability</strong> (receive your data in a structured, machine-readable
+        format)
+      </li>
+      <li>
+        <strong>Withdraw consent</strong> at any time, without affecting prior lawful processing
+      </li>
+      <li>
+        <strong>Lodge a complaint</strong> with your local supervisory authority (EU:
+        <a
+          href="https://edpb.europa.eu/about-edpb/about-edpb/members_en"
+          target="_blank"
+          rel="noopener noreferrer">EDPB members</a
+        >; UK:
+        <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer">ICO</a>)
+      </li>
+    </ul>
+    <p>
+      Contact <a href={`mailto:${privacyEmail}`}>{privacyEmail}</a> or use in-app
+      <strong>Settings &gt; Privacy &gt; Manage My Data</strong>. We will respond within
+      <strong>one month</strong> where Art. 12(3) GDPR applies.
+    </p>
+
+    <h2>10. U.S. State Privacy Rights (including California CCPA/CPRA)</h2>
+    <p>
+      Residents of California and certain other U.S. states (including, depending on applicability
+      thresholds, Virginia, Colorado, Connecticut, Utah, Oregon, Texas, and others) may have rights
+      to:
+    </p>
+    <ul>
+      <li>
+        <strong>Know / access</strong> the personal information we collected about you, including
+        categories, sources, purposes, and disclosures
+      </li>
+      <li><strong>Delete</strong> personal information (subject to legal exceptions)</li>
+      <li><strong>Correct</strong> inaccurate personal information</li>
+      <li>
+        <strong>Opt out of sale or sharing</strong> of personal information (we do not sell or share
+        as defined by the CCPA)
+      </li>
+      <li>
+        <strong>Limit use/disclosure of sensitive personal information</strong> (we do not use
+        sensitive PI beyond CCPA-permitted purposes described in §3; if that changes, we will
+        provide a Right to Limit notice)
+      </li>
+      <li>
+        <strong>Opt out of targeted advertising / profiling</strong> where required by applicable
+        state law
+      </li>
+      <li>
+        <strong>Non-discrimination</strong> for exercising privacy rights (we will not deny goods or
+        services, charge different prices, or provide a different level of quality solely for
+        exercising CCPA rights)
+      </li>
+    </ul>
+
+    <h3>How to exercise U.S. privacy rights</h3>
+    <p>Submit a verifiable consumer request by either:</p>
+    <ol>
+      <li>
+        Emailing <a href={`mailto:${privacyEmail}`}>{privacyEmail}</a> with the subject line
+        "Privacy Request," or
+      </li>
+      <li>
+        Using in-app tools under <strong>Settings &gt; Privacy &gt; Manage My Data</strong> /
+        <strong>Settings &gt; Account &gt; Delete Account</strong>.
+      </li>
+    </ol>
+    <p>
+      We will verify your identity (for example, by confirming control of your account email or
+      requiring you to sign in) before fulfilling requests. You may use an authorized agent where
+      permitted by law; we may require proof of authorization and may still need to verify your
+      identity directly. We will respond within <strong>45 days</strong> of receiving a verifiable
+      request (or longer where permitted, with notice).
+    </p>
+    <p>
+      <strong>Do Not Sell or Share My Personal Information:</strong> Because we do not sell or share
+      personal information as defined by the CCPA, no opt-out is currently necessary. You may still
+      contact us to record a preference.
+    </p>
+    <p>
+      <strong>California Shine the Light (Civ. Code §1798.83):</strong> We do not disclose personal
+      information to third parties for their own direct marketing purposes. California residents may
+      request information about any such disclosures by emailing{' '}
+      <a href={`mailto:${privacyEmail}`}>{privacyEmail}</a>.
+    </p>
+    <p>
+      <strong>Nevada:</strong> We do not sell covered information as defined by Nevada law. Nevada
+      residents may email us to request that we not sell their covered information in the future.
+    </p>
+
+    <h3>In-app &amp; device controls</h3>
+    <ul>
+      <li>Edit/delete profile data: <strong>Settings &gt; Profile</strong></li>
+      <li>Delete your account: <strong>Settings &gt; Account &gt; Delete Account</strong></li>
+      <li>
+        Location: iOS <strong>Settings &gt; Privacy &amp; Security &gt; Location Services &gt;
+        M8tcha</strong> (or Android location settings)
+      </li>
+      <li>
+        Tracking: iOS <strong>Settings &gt; Privacy &amp; Security &gt; Tracking</strong>
+      </li>
+    </ul>
+
+    <h2>11. Data Security</h2>
+    <p>
+      We use industry-standard technical and organizational measures (encryption in transit, access
+      controls, regular security reviews) to protect your data. No system is 100% secure, and we
+      cannot guarantee absolute security. Please use a strong password and protect your devices.
+    </p>
+
+    <h2>12. Children's Privacy</h2>
+    <p>
+      M8tcha is not directed to, and does not knowingly collect data from, children under 13 (COPPA)
+      or anyone under 18. See §2.
+    </p>
+
+    <h2>13. Changes to This Policy</h2>
+    <p>
+      We may update this Privacy Policy from time to time. The "Last Updated" date shows the latest
+      revision. Material changes will be notified via in-app notice or email before they take effect
+      where required. Continued use of the App after changes take effect constitutes acceptance to
+      the extent permitted by law.
+    </p>
+
+    <h2>14. Contact Us</h2>
+    <p>
+      <strong>M8tcha, Inc.</strong><br />
+      Delaware, United States<br />
+      Privacy requests: <a href={`mailto:${privacyEmail}`}>{privacyEmail}</a>
+    </p>
+
     <a class="back" href="/">← Back home</a>
   </main>
   <Footer />
@@ -23,24 +518,117 @@ import Footer from '../components/Footer.astro';
     position: relative;
     z-index: 1;
     padding: 4rem 0 5rem;
-    max-width: 40rem;
+    max-width: 48rem;
+  }
+
+  .eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
   }
 
   h1 {
-    font-size: clamp(2.2rem, 5vw, 3rem);
-    margin-bottom: 1rem;
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 5vw, 3.25rem);
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 0.75rem;
+  }
+
+  .updated {
+    color: var(--text-muted);
+    margin-bottom: 1.75rem;
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 1.1rem + 0.8vw, 1.75rem);
+    letter-spacing: -0.02em;
+    margin: 2.5rem 0 1rem;
+  }
+
+  h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 1.5rem 0 0.75rem;
+  }
+
+  p,
+  li {
+    color: var(--text-muted);
+    line-height: 1.65;
   }
 
   p {
-    color: var(--text-muted);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  ul,
+  ol {
+    margin: 0 0 1.25rem;
+    padding-left: 1.2rem;
+  }
+
+  li + li {
+    margin-top: 0.55rem;
+  }
+
+  strong {
+    color: var(--text);
+    font-weight: 600;
   }
 
   a {
     color: var(--matcha-bright);
   }
 
+  a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    margin: 1.25rem 0 1.5rem;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    min-width: 42rem;
+  }
+
+  th,
+  td {
+    text-align: left;
+    vertical-align: top;
+    padding: 0.85rem 0.75rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-muted);
+    line-height: 1.45;
+  }
+
+  th {
+    color: var(--text);
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
   .back {
+    display: inline-block;
+    margin-top: 2.5rem;
     font-weight: 600;
   }
 </style>
