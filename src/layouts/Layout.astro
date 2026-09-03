@@ -32,6 +32,13 @@ const {
       rel="stylesheet"
     />
     <title>{title}</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K3LNYC5MV1" is:inline></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-K3LNYC5MV1');
+    </script>
     <script is:inline>
       (() => {
         const saved = localStorage.getItem('m8tcha-theme');
