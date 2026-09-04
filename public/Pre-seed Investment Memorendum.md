@@ -1,6 +1,6 @@
 # M8tcha, Inc.
 
-**Pre-Seed / Seed — Investment Memorandum**
+**Pre-Seed / Seed - Investment Memorandum**
 
 > Confidential Investor Document
 
@@ -81,10 +81,10 @@ M8tcha centers the product around interaction-first discovery to recreate social
 
 **Core Values:**
 
-- Human Connection First — Technology should enhance relationships, not replace them.
-- Authenticity — People connect better when they can express themselves beyond a profile.
-- Community — Strong relationships often begin through shared interests and experiences.
-- Safety — Trust and user protection are foundational to a healthy platform.
+- Human Connection First - Technology should enhance relationships, not replace them.
+- Authenticity - People connect better when they can express themselves beyond a profile.
+- Community - Strong relationships often begin through shared interests and experiences.
+- Safety - Trust and user protection are foundational to a healthy platform.
 
 ---
 
@@ -127,15 +127,15 @@ By emphasizing community and live interaction, M8tcha helps users discover other
 
 Core experiences:
 
-1. Rooms — Live video communities for real-time interaction.
-2. Events — Local experiences that connect online communities to offline gatherings.
-3. Matches — Relationship discovery built from shared interests and engagement.
+1. Rooms - Live video communities for real-time interaction.
+2. Events - Local experiences that connect online communities to offline gatherings.
+3. Matches - Relationship discovery built from shared interests and engagement.
 
 ---
 
 ## 8. M8tcha Rooms
 
-Rooms enable users to join live conversations, meet multiple people, participate in communities, and discover personalities in context — allowing interaction to precede decisions about compatibility.
+Rooms enable users to join live conversations, meet multiple people, participate in communities, and discover personalities in context - allowing interaction to precede decisions about compatibility.
 
 ---
 
@@ -163,9 +163,9 @@ The objective is quality connections rather than raw match volume.
 
 Focus areas:
 
-1. Real-time social infrastructure — low-latency video, scalable rooms, presence systems, moderation.
-2. Recommendation & discovery systems — behavior and community signals.
-3. Trust & safety infrastructure — reporting, moderation, identity verification, anti-harassment protections.
+1. Real-time social infrastructure - low-latency video, scalable rooms, presence systems, moderation.
+2. Recommendation & discovery systems - behavior and community signals.
+3. Trust & safety infrastructure - reporting, moderation, identity verification, anti-harassment protections.
 
 ---
 
@@ -192,7 +192,7 @@ M8tcha combines community discovery, live interaction, and dating intent.
 
 ## 14. Competitive Advantages
 
-Compared to other categories, M8tcha offers a combined set of features: profile discovery, live video interaction, communities, dating intent, and real-world events — supporting higher-quality relationship discovery.
+Compared to other categories, M8tcha offers a combined set of features: profile discovery, live video interaction, communities, dating intent, and real-world events - supporting higher-quality relationship discovery.
 
 ---
 
@@ -223,9 +223,9 @@ Concentrated market launches and authentic creator-led growth are early prioriti
 
 Phases:
 
-- Phase 1 — Community Foundation: establish active communities and improve retention.
-- Phase 2 — City Expansion: launch in concentrated markets and partner with venues.
-- Phase 3 — Network Expansion: scale nationally and accelerate monetization.
+- Phase 1 - Community Foundation: establish active communities and improve retention.
+- Phase 2 - City Expansion: launch in concentrated markets and partner with venues.
+- Phase 3 - Network Expansion: scale nationally and accelerate monetization.
 
 ---
 
@@ -292,10 +292,10 @@ A SAFE provides investors the right to equity conversion in a future priced roun
 
 Primary allocations:
 
-1. Product Development — app improvements, matching, Rooms, events
-2. User Acquisition — influencer partnerships, content campaigns, ambassadors
-3. Infrastructure — cloud, video systems, DB scaling, security, analytics
-4. Operations — legal, partnerships, hiring
+1. Product Development - app improvements, matching, Rooms, events
+2. User Acquisition - influencer partnerships, content campaigns, ambassadors
+3. Infrastructure - cloud, video systems, DB scaling, security, analytics
+4. Operations - legal, partnerships, hiring
 
 ---
 
@@ -337,7 +337,7 @@ Drivers:
 
 ## 29. Long-Term Vision
 
-M8tcha aims to be the infrastructure layer for human connection — supporting relationships, communities, experiences, and social identities beyond dating.
+M8tcha aims to be the infrastructure layer for human connection - supporting relationships, communities, experiences, and social identities beyond dating.
 
 ---
 
@@ -345,10 +345,10 @@ M8tcha aims to be the infrastructure layer for human connection — supporting r
 
 Key risks and mitigations:
 
-- User Acquisition Risk — mitigate via community-led growth, events, influencers.
-- Competition Risk — differentiate with live interaction, community-first design, event integration.
-- Safety & Moderation Risk — invest in reporting, moderation, product safety.
-- Retention Risk — focus on engagement, Rooms, events, and multiple connection paths.
+- User Acquisition Risk - mitigate via community-led growth, events, influencers.
+- Competition Risk - differentiate with live interaction, community-first design, event integration.
+- Safety & Moderation Risk - invest in reporting, moderation, product safety.
+- Retention Risk - focus on engagement, Rooms, events, and multiple connection paths.
 
 ---
 

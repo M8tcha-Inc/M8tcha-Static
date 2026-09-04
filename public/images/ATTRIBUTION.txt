@@ -1,12 +1,12 @@
-Photos from Unsplash (https://unsplash.com/license) — free to use.
+Photos from Unsplash (https://unsplash.com/license) - free to use.
 
-- person-1.jpg — https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e
-- person-2.jpg — https://images.unsplash.com/photo-1488161628813-04466f872be2
-- person-3.jpg — https://images.unsplash.com/photo-1531746020798-e6953c6e8e04
-- person-4.jpg — https://images.unsplash.com/photo-1500648767791-00dcc994a43e
-- person-5.jpg — https://images.unsplash.com/photo-1539571696357-5a69c17a67c6
-- person-6.jpg — https://images.unsplash.com/photo-1524504388940-b1c1722653e1
-- person-7.jpg — https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d
-- person-8.jpg — https://images.unsplash.com/photo-1494790108377-be9c29b29330
-- person-9.jpg — https://images.unsplash.com/photo-1463453091185-61582044d556
-- person-10.jpg — https://images.unsplash.com/photo-1517841905240-472988babdf9
+- person-1.jpg - https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e
+- person-2.jpg - https://images.unsplash.com/photo-1488161628813-04466f872be2
+- person-3.jpg - https://images.unsplash.com/photo-1531746020798-e6953c6e8e04
+- person-4.jpg - https://images.unsplash.com/photo-1500648767791-00dcc994a43e
+- person-5.jpg - https://images.unsplash.com/photo-1539571696357-5a69c17a67c6
+- person-6.jpg - https://images.unsplash.com/photo-1524504388940-b1c1722653e1
+- person-7.jpg - https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d
+- person-8.jpg - https://images.unsplash.com/photo-1494790108377-be9c29b29330
+- person-9.jpg - https://images.unsplash.com/photo-1463453091185-61582044d556
+- person-10.jpg - https://images.unsplash.com/photo-1517841905240-472988babdf9
