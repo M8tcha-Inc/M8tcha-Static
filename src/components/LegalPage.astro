@@ -1,0 +1,127 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from './Nav.astro';
+import Footer from './Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  updated?: string;
+  sectionLabel?: string;
+}
+
+const {
+  title,
+  description,
+  updated = 'September 13, 2026',
+  sectionLabel = 'Legal',
+} = Astro.props;
+---
+
+<Layout title={`${title} - M8tcha`} description={description}>
+  <Nav />
+  <main class="legal wrap">
+    <p class="eyebrow">{sectionLabel}</p>
+    <h1>{title}</h1>
+    <p class="updated"><strong>Last Updated: {updated}</strong></p>
+    <slot />
+    <a class="back" href="/">← Back home</a>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .legal {
+    position: relative;
+    z-index: 1;
+    padding: 4rem 0 5rem;
+    max-width: 48rem;
+  }
+
+  .eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 5vw, 3.25rem);
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 0.75rem;
+  }
+
+  .updated {
+    color: var(--text-muted);
+    margin-bottom: 1.75rem;
+  }
+
+  :global(.legal h2) {
+    margin: 2.5rem 0 0.85rem;
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+  }
+
+  :global(.legal h3) {
+    margin: 1.75rem 0 0.65rem;
+    font-size: 1.05rem;
+  }
+
+  :global(.legal p),
+  :global(.legal li) {
+    color: var(--text-muted);
+    line-height: 1.75;
+  }
+
+  :global(.legal p + p) {
+    margin-top: 1rem;
+  }
+
+  :global(.legal ul),
+  :global(.legal ol) {
+    padding-left: 1.25rem;
+    margin: 0.75rem 0 1rem;
+  }
+
+  :global(.legal li + li) {
+    margin-top: 0.55rem;
+  }
+
+  :global(.legal strong) {
+    color: var(--text);
+  }
+
+  :global(.legal a) {
+    color: var(--matcha-bright);
+  }
+
+  :global(.legal table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  :global(.legal th),
+  :global(.legal td) {
+    padding: 0.8rem 0.65rem;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  :global(.legal th) {
+    color: var(--text);
+  }
+
+  .back {
+    display: inline-block;
+    margin-top: 2.5rem;
+    color: var(--text) !important;
+    font-weight: 700;
+  }
+</style>

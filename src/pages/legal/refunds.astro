@@ -1,0 +1,57 @@
+---
+import LegalPage from '../../components/LegalPage.astro';
+
+const supportEmail = 'hello@m8tcha.com';
+---
+
+<LegalPage
+  title="Refund Policy"
+  description="How M8tcha handles subscription cancellations, refunds, and billing issues."
+>
+  <p>
+    This Refund Policy applies to M8tcha Premium subscriptions and other paid features. It should be
+    read with our{' '}<a href="/legal/terms">Terms of Service</a>{' '}and{' '}
+    <a href="/legal/pricing">Pricing</a>{' '}page. Nothing here limits a refund or cancellation right that
+    cannot legally be waived.
+  </p>
+
+  <h2>1. Canceling a Subscription</h2>
+  <p>
+    Canceling stops future renewals; it does not normally create a partial-period refund. For Stripe
+    purchases, use the manage-subscription link in the app or Stripe Customer Portal. For Apple or
+    Google purchases, cancel in your Apple Account or Google Play subscription settings. You normally
+    keep Premium access until the end of the period already paid for.
+  </p>
+
+  <h2>2. Refunds</h2>
+  <p>
+    We may issue a full or partial refund when required by law or when a payment was duplicated,
+    unauthorized, materially incorrect, or a paid feature was unavailable and we cannot reasonably
+    restore it. Refunds are returned to the original payment method where possible. Approved Stripe
+    refunds can take several business days to appear, depending on the card issuer.
+  </p>
+  <p>
+    We do not promise refunds for unused time after cancellation, dissatisfaction with interactions
+    with another user, or failure to use a paid feature, except where applicable law requires one.
+  </p>
+
+  <h2>3. Where to Request Help</h2>
+  <p>
+    For a Stripe charge, email <a href={`mailto:${supportEmail}`}>{supportEmail}</a> with the account
+    email, charge date, amount, and reason for the request. Do not send full card numbers or security
+    codes. We may ask for information sufficient to verify the account and transaction.
+  </p>
+  <p>
+    Apple and Google control refunds for purchases made through their stores. Request those refunds
+    directly from Apple at <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener noreferrer">reportaproblem.apple.com</a>
+    or through Google Play's refund process. We cannot issue a store refund for a transaction we did
+    not process.
+  </p>
+
+  <h2>4. EU/UK Consumer Rights</h2>
+  <p>
+    Consumers in the EU, EEA, or UK may have a statutory cooling-off or withdrawal right. If you ask
+    us to begin supplying a digital service immediately, you may lose that right once performance has
+    begun, to the extent permitted by law. Any mandatory local consumer rights remain unaffected.
+  </p>
+</LegalPage>

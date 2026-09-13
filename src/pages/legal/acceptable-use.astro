@@ -1,0 +1,64 @@
+---
+import LegalPage from '../../components/LegalPage.astro';
+
+const contactEmail = 'hello@m8tcha.com';
+---
+
+<LegalPage
+  title="Acceptable Use Policy"
+  description="The rules for using M8tcha safely, lawfully, and respectfully."
+>
+  <p>
+    This Acceptable Use Policy ("<strong>AUP</strong>") explains conduct that is not allowed on
+    M8tcha. It applies to the M8tcha app, website, Rooms, events, messages, profiles, and all other
+    related services (the "<strong>Services</strong>"). It supplements our{' '}
+    <a href="/legal/terms">Terms of Service</a>. Capitalized terms not defined here have the meaning in
+    the Terms.
+  </p>
+
+  <h2>1. Be Eligible and Truthful</h2>
+  <ul>
+    <li>You must be at least 18 years old to use the Services.</li>
+    <li>Use one account, provide accurate information, and do not impersonate another person.</li>
+    <li>Do not create an account for someone else, use a bot, or misrepresent your age or identity.</li>
+  </ul>
+
+  <h2>2. Prohibited Conduct</h2>
+  <p>You may not use the Services to:</p>
+  <ul>
+    <li>Harass, stalk, threaten, intimidate, exploit, or endanger anyone.</li>
+    <li>Publish hate speech, discriminatory abuse, threats of violence, or graphic violence.</li>
+    <li>Share sexually explicit content, sexual solicitation, or any content involving minors.</li>
+    <li>Scam, defraud, extort, solicit money, or request payment or financial credentials from users.</li>
+    <li>Promote unlawful commercial activity, spam, pyramid schemes, or unauthorized advertising.</li>
+    <li>Share another person's private information, images, or communications without permission.</li>
+    <li>Upload malware or attempt to phish, scrape, reverse engineer, disrupt, or bypass security.</li>
+    <li>Use the Services for unlawful discrimination, surveillance, or any illegal purpose.</li>
+  </ul>
+
+  <h2>3. Content and Safety</h2>
+  <p>
+    Only upload content you have the right to share. We may remove content, restrict visibility,
+    suspend or terminate accounts, preserve evidence, and report suspected crime or urgent safety
+    threats to appropriate authorities. We do not guarantee that every violation will be detected or
+    prevented. M8tcha does not conduct criminal background checks or guarantee the identity or safety
+    of any user.
+  </p>
+
+  <h2>4. Reporting</h2>
+  <p>
+    Use the in-app report or block tools whenever possible. For urgent safety concerns, contact local
+    emergency services first. You may also email <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+    with the username, relevant dates, and a description of the concern. Do not include unnecessary
+    sensitive information.
+  </p>
+
+  <h2>5. Enforcement and Appeals</h2>
+  <p>
+    We assess reports using the information available to us and may take action proportionate to the
+    risk, including warnings, content removal, feature limits, suspension, or termination. We may
+    retain records needed for safety, fraud prevention, legal compliance, and appeals. If you believe
+    enforcement was mistaken, contact us at <a href={`mailto:${contactEmail}`}>{contactEmail}</a> with
+    the subject “AUP appeal” and the account email or username.
+  </p>
+</LegalPage>

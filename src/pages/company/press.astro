@@ -1,0 +1,30 @@
+---
+import LegalPage from '../../components/LegalPage.astro';
+
+const contactEmail = 'hello@m8tcha.com';
+---
+
+<LegalPage
+  title="Press"
+  description="Press and media information for M8tcha."
+  sectionLabel="Company"
+>
+  <p>
+    M8tcha is a social discovery platform designed for nearby connection, live conversation, and
+    real-world experiences.
+  </p>
+
+  <h2>Media Inquiries</h2>
+  <p>
+    For interviews, product questions, partnership stories, or other media requests, contact{' '}
+    <a href={`mailto:${contactEmail}`}>{contactEmail}</a>{' '}with “Press” in the subject line. Please
+    include your outlet, deadline, and the topic you are covering.
+  </p>
+
+  <h2>Company Information</h2>
+  <ul>
+    <li><strong>Company:</strong> M8tcha, Inc.</li>
+    <li><strong>Focus:</strong> Social discovery and meaningful connection</li>
+    <li><strong>Website:</strong> <a href="https://m8tcha.com">m8tcha.com</a></li>
+  </ul>
+</LegalPage>

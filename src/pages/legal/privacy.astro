@@ -1,9 +1,9 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
 
-const lastUpdated = 'August 8, 2026';
+const lastUpdated = 'September 13, 2026';
 const privacyEmail = 'hello@m8tcha.com';
 ---
 
@@ -505,7 +505,9 @@ const privacyEmail = 'hello@m8tcha.com';
     <p>
       <strong>M8tcha, Inc.</strong><br />
       Delaware, United States<br />
-      Privacy requests: <a href={`mailto:${privacyEmail}`}>{privacyEmail}</a>
+      Privacy requests: <a href={`mailto:${privacyEmail}`}>{privacyEmail}</a><br />
+      Authorized government requests: <a href="/legal/law-enforcement">Law-enforcement protocols</a><br />
+      Other support: <a href="/legal/contact">Contact Information</a>
     </p>
 
     <a class="back" href="/">← Back home</a>

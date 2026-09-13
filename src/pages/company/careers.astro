@@ -1,0 +1,32 @@
+---
+import LegalPage from '../../components/LegalPage.astro';
+
+const contactEmail = 'hello@m8tcha.com';
+---
+
+<LegalPage
+  title="Careers at M8tcha"
+  description="Join M8tcha in building more human ways for people to connect."
+  sectionLabel="Company"
+>
+  <p>
+    We are building a product for people who want more meaningful ways to meet, talk, and spend time
+    together. Our work sits at the intersection of community, technology, and real-world connection.
+  </p>
+
+  <h2>Work With Us</h2>
+  <p>
+    We are growing thoughtfully and may not always have a formal opening listed. If you care about
+    trust, product craft, community, or the future of social connection, send a short introduction
+    and relevant work to{' '}<a href={`mailto:${contactEmail}`}>{contactEmail}</a>{' '}with “Careers” in the
+    subject line.
+  </p>
+
+  <h2>What Matters Here</h2>
+  <ul>
+    <li>Build for people, not engagement for its own sake.</li>
+    <li>Make thoughtful decisions and communicate clearly.</li>
+    <li>Treat safety, privacy, and belonging as product foundations.</li>
+    <li>Stay curious, practical, and close to the people using the product.</li>
+  </ul>
+</LegalPage>

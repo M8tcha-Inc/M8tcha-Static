@@ -1,0 +1,53 @@
+---
+import LegalPage from '../../components/LegalPage.astro';
+
+const contactEmail = 'hello@m8tcha.com';
+---
+
+<LegalPage
+  title="Contact Information"
+  description="How to contact M8tcha for support, privacy, safety, and legal matters."
+>
+  <p>
+    M8tcha, Inc. is a Delaware corporation operating the M8tcha app and related services in the
+    United States. Email is the fastest way to reach the team.
+  </p>
+
+  <h2>General Support</h2>
+  <p>
+    <a href={`mailto:${contactEmail}`}>{contactEmail}</a><br />
+    Include the email address on your M8tcha account, a short description, and relevant dates. Never
+    send a password, full payment-card number, or security code.
+  </p>
+
+  <h2>Privacy Requests</h2>
+  <p>
+    Send access, deletion, correction, data, or other privacy requests to{' '}
+    <a href={`mailto:${contactEmail}`}>{contactEmail}</a>{' '}with the subject “Privacy Request.” See our{' '}
+    <a href="/legal/privacy">Privacy Policy</a>{' '}for request rights, verification, and response times.
+  </p>
+
+  <h2>Safety and Abuse Reports</h2>
+  <p>
+    Report users and content through the in-app tools whenever possible. For urgent danger, contact
+    local emergency services. For other safety concerns, email
+    <a href={`mailto:${contactEmail}`}>{contactEmail}</a> with the subject “Safety Report.”
+  </p>
+
+  <h2>Billing</h2>
+  <p>
+    For Stripe billing questions, email <a href={`mailto:${contactEmail}`}>{contactEmail}</a> with the
+    charge date, amount, and account email. Apple and Google store purchases must be managed through
+    the applicable store. Review our <a href="/legal/pricing">Pricing</a>{' '}and{' '}
+    <a href="/legal/refunds">Refund Policy</a> pages for more information.
+  </p>
+
+  <h2>Legal and Law Enforcement</h2>
+  <p>
+    Legal notices and authorized government requests may be sent to{' '}
+    <a href={`mailto:${contactEmail}`}>{contactEmail}</a>. See our{' '}
+    <a href="/legal/law-enforcement">law-enforcement protocols</a>{' '}before submitting a request.
+  </p>
+
+  <p><strong>Business:</strong> M8tcha, Inc., Delaware, United States</p>
+</LegalPage>

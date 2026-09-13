@@ -1,0 +1,64 @@
+---
+import LegalPage from '../../components/LegalPage.astro';
+
+const legalEmail = 'hello@m8tcha.com';
+---
+
+<LegalPage
+  title="Protocols for Law Enforcement"
+  description="How authorized authorities can submit legal requests to M8tcha."
+>
+  <p>
+    This page describes M8tcha's process for responding to valid requests from law-enforcement and
+    government authorities. It does not create rights beyond applicable law and does not replace an
+    emergency request process.
+  </p>
+
+  <h2>Emergency Requests</h2>
+  <p>
+    If there is an imminent risk of death or serious physical injury, an authorized official should
+    email <a href={`mailto:${legalEmail}`}>{legalEmail}</a> with “EMERGENCY REQUEST” in the subject
+    line. Include the agency, official name and contact details, the emergency, the information
+    requested, and why disclosure is necessary to address the threat. Contact local emergency
+    services first where appropriate.
+  </p>
+  <p>
+    We evaluate emergency requests individually and may disclose information when we reasonably
+    believe it is necessary to prevent imminent harm and permitted by law. An emergency request is
+    not a substitute for legal process.
+  </p>
+
+  <h2>Non-Emergency Requests</h2>
+  <p>
+    Send subpoenas, court orders, warrants, preservation requests, and other formal legal process to{' '}
+    <a href={`mailto:${legalEmail}`}>{legalEmail}</a>. Requests should identify the issuing authority,
+    legal basis, case or reference number, target account or identifiers, requested data, relevant
+    date range, and a point of contact. We review requests for validity, scope, and legal authority
+    and may object to or narrow requests where appropriate.
+  </p>
+
+  <h2>Preservation and Disclosure</h2>
+  <p>
+    We may preserve records for a legally valid preservation request and for the period required by
+    law. We disclose only information responsive to valid process or a lawful emergency request. We
+    do not guarantee that requested data exists, is complete, or can be recovered after deletion.
+    Account data may be encrypted, aggregated, or held by a service provider and may therefore be
+    unavailable to us.
+  </p>
+
+  <h2>User Notice</h2>
+  <p>
+    Where legally permitted, we may notify the affected user before disclosure. We may delay or
+    withhold notice when prohibited by law, ordered by a court, or reasonably necessary to prevent
+    harm, obstruction, or tampering with an investigation.
+  </p>
+
+  <h2>Data Protection and Contact</h2>
+  <p>
+    We handle government requests consistent with our{' '}
+    <a href="/legal/privacy">Privacy Policy</a>{' '}and
+    applicable law. We do not accept ordinary customer support, removal, or account-recovery
+    requests through this channel. Those requests should be sent to{' '}
+    <a href={`mailto:${legalEmail}`}>{legalEmail}</a>{' '}with the subject “Support.”
+  </p>
+</LegalPage>

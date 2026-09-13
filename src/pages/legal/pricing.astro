@@ -1,0 +1,56 @@
+---
+import LegalPage from '../../components/LegalPage.astro';
+---
+
+<LegalPage
+  title="Pricing for Products and Services"
+  description="Current M8tcha subscription pricing, billing intervals, and purchase terms."
+>
+  <p>
+    M8tcha can be used to discover people, join Rooms, and connect socially. We may also offer
+    optional M8tcha Premium subscriptions with additional features. The prices below are the
+    current standard USD offers configured for the Services as of the date above.
+  </p>
+
+  <h2>Current Premium Plans</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Plan</th><th>Price</th><th>Billing</th><th>Includes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Premium Weekly</td><td>$19.99</td><td>Every 7 days</td><td>Unlimited likes, see who liked you, advanced filters</td></tr>
+        <tr><td>Premium Monthly</td><td>$69.99</td><td>Every month</td><td>Unlimited likes, see who liked you, one boost per month, advanced filters</td></tr>
+        <tr><td>Premium Quarterly</td><td>$179.99</td><td>Every 3 months</td><td>Unlimited likes, see who liked you, two boosts per month, advanced filters</td></tr>
+        <tr><td>Premium Yearly</td><td>$599.99</td><td>Every year</td><td>Unlimited likes, see who liked you, four boosts per month, advanced filters, priority support</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    Prices are in U.S. dollars and are before any applicable taxes unless the checkout screen says
+    otherwise. The final price, currency, taxes, promotional offer, and available payment method
+    shown at checkout control the transaction. Prices may vary by country, platform, or storefront.
+    We will not charge you without your confirmation of the displayed offer.
+  </p>
+
+  <h2>Billing and Cancellation</h2>
+  <p>
+    Subscriptions renew automatically for the same interval until canceled. Stripe payments are
+    processed through Stripe Checkout and can be managed in the Stripe Customer Portal. Apple and
+    Google purchases are managed through the applicable store. Cancel before the next renewal date to
+    avoid the next charge; cancellation normally takes effect at the end of the paid period.
+  </p>
+  <p>
+    See our{' '}<a href="/legal/terms">Terms of Service</a>{' '}and{' '}
+    <a href="/legal/refunds">Refund Policy</a>{' '}for
+    renewal, cancellation, statutory withdrawal, and refund terms.
+  </p>
+
+  <h2>Payment Processing</h2>
+  <p>
+    Stripe, Apple, and Google process payments under their own terms and privacy policies. M8tcha
+    does not store full payment card numbers. We receive billing status and transaction information
+    needed to provide Premium, prevent fraud, provide support, and comply with accounting and legal
+    obligations.
+  </p>
+</LegalPage>

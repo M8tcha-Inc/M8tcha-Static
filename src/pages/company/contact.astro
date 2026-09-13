@@ -1,0 +1,27 @@
+---
+import LegalPage from '../../components/LegalPage.astro';
+
+const contactEmail = 'hello@m8tcha.com';
+---
+
+<LegalPage
+  title="Contact M8tcha"
+  description="Contact the M8tcha team for general, partnership, and support inquiries."
+  sectionLabel="Company"
+>
+  <p>
+    For general questions, partnerships, feedback, or product support, email
+    <a href={`mailto:${contactEmail}`}>{contactEmail}</a>. Include enough context for us to route
+    your message to the right person.
+  </p>
+
+  <h2>Useful Contacts</h2>
+  <ul>
+    <li><strong>General and support:</strong> <a href={`mailto:${contactEmail}`}>{contactEmail}</a></li>
+    <li><strong>Partnerships:</strong> <a href={`mailto:${contactEmail}`}>{contactEmail}</a></li>
+    <li><strong>Press:</strong> <a href="/company/press">Press information</a></li>
+    <li><strong>Privacy and legal:</strong> <a href="/legal">Legal information</a></li>
+  </ul>
+
+  <p>Never send passwords, full payment-card numbers, or security codes by email.</p>
+</LegalPage>
