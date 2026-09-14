@@ -1,0 +1,247 @@
+---
+const events = [
+  { date: 'FRI 14', title: 'Rooftop film club', place: 'The Atrium · 1.2 mi', tone: 'pink' },
+  { date: 'SAT 15', title: 'Night market walk', place: 'Canal Street · 2.8 mi', tone: 'matcha' },
+  { date: 'SUN 16', title: 'Sunday ceramics', place: 'Clay House · 3.4 mi', tone: 'cream' },
+];
+---
+
+<section class="events" id="events">
+  <div class="wrap events__grid">
+    <div class="events__copy reveal">
+      <p class="eyebrow">Out in the world</p>
+      <h2>Make plans worth <span class="accent-pink">leaving home for.</span></h2>
+      <p class="lede">
+        Find concerts, pop-ups, classes, and little local rituals that make a good first date feel
+        easy. See who is interested and show up with a spark already in the room.
+      </p>
+      <ul class="bullets">
+        <li>Recommendations shaped around your interests</li>
+        <li>See what your matches are curious about</li>
+        <li>Save a plan before the conversation goes cold</li>
+      </ul>
+      <a class="btn btn-pink" href="#download">Explore events</a>
+    </div>
+
+    <div class="events__board reveal reveal-delay-1" aria-label="Example nearby events">
+      <div class="events__board-top">
+        <span>For you</span>
+        <span class="events__location">Nearby · 5 mi</span>
+      </div>
+      <div class="events__filters" aria-hidden="true">
+        <span class="events__filter events__filter--active">This weekend</span>
+        <span class="events__filter">Music</span>
+        <span class="events__filter">Food</span>
+      </div>
+      <div class="event-list">
+        {
+          events.map((event, i) => (
+            <article class={`event event--${event.tone}`}>
+              <div class="event__date">
+                <span>{event.date.split(' ')[0]}</span>
+                <strong>{event.date.split(' ')[1]}</strong>
+              </div>
+              <div class="event__details">
+                <h3>{event.title}</h3>
+                <p>{event.place}</p>
+              </div>
+              <span class="event__interest">{i === 0 ? '12' : i === 1 ? '8' : '5'} interested</span>
+            </article>
+          ))
+        }
+      </div>
+      <div class="events__signal"><span></span> Your people are making plans</div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .events {
+    position: relative;
+    z-index: 1;
+    padding: var(--section-space) 0;
+    background: color-mix(in srgb, var(--pink-muted) 38%, var(--bg));
+  }
+
+  .events__grid {
+    display: grid;
+    gap: clamp(2.5rem, 6vw, 7rem);
+    align-items: center;
+  }
+
+  .eyebrow {
+    color: var(--matcha-bright);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: var(--font-size-h2);
+    margin-bottom: 1rem;
+  }
+
+  .lede {
+    color: var(--text-muted);
+    max-width: 42ch;
+    margin-bottom: 1.35rem;
+    font-size: var(--font-size-lede);
+  }
+
+  .bullets {
+    display: grid;
+    gap: 0.65rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .bullets li {
+    position: relative;
+    padding-left: 1.35rem;
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 50%;
+    background: var(--pink);
+  }
+
+  .events__board {
+    padding: clamp(1rem, 3vw, 1.65rem);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--bg-elevated);
+    box-shadow: 10px 10px 0 color-mix(in srgb, var(--pink) 42%, transparent);
+  }
+
+  .events__board-top,
+  .events__filters,
+  .event,
+  .events__signal {
+    display: flex;
+    align-items: center;
+  }
+
+  .events__board-top {
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.35rem;
+  }
+
+  .events__location {
+    color: var(--text-muted);
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .events__filters {
+    gap: 0.45rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+
+  .events__filter {
+    flex: 0 0 auto;
+    padding: 0.45rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-pill);
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+
+  .events__filter--active {
+    border-color: var(--pink);
+    color: var(--pink);
+  }
+
+  .event-list {
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  .event {
+    gap: 0.85rem;
+    min-width: 0;
+    padding: 1rem;
+    border-radius: var(--radius);
+    background: var(--bg-soft);
+    border-left: 4px solid var(--pink);
+  }
+
+  .event--matcha { border-left-color: var(--matcha-bright); }
+  .event--cream { border-left-color: var(--cream); }
+
+  .event__date {
+    display: grid;
+    place-items: center;
+    flex: 0 0 3rem;
+    aspect-ratio: 1;
+    border-radius: 10px;
+    background: var(--pink-muted);
+    color: var(--pink);
+    font-family: var(--font-display);
+    font-size: 0.62rem;
+    line-height: 1;
+  }
+
+  .event--matcha .event__date { background: var(--matcha-muted); color: var(--matcha-bright); }
+  .event--cream .event__date { background: var(--surface); color: var(--text); }
+
+  .event__date strong { font-size: 1.15rem; }
+
+  .event__details { min-width: 0; flex: 1; }
+
+  .event h3 {
+    overflow: hidden;
+    margin-bottom: 0.2rem;
+    font-size: 1.05rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .event p,
+  .event__interest {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+  }
+
+  .event__interest { white-space: nowrap; }
+
+  .events__signal {
+    gap: 0.55rem;
+    margin-top: 1rem;
+    color: var(--text-muted);
+    font-size: 0.78rem;
+  }
+
+  .events__signal span {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--matcha-bright);
+    box-shadow: 0 0 0 4px var(--matcha-muted);
+  }
+
+  @media (min-width: 920px) {
+    .events__grid { grid-template-columns: 0.9fr 1.1fr; }
+  }
+
+  @media (max-width: 520px) {
+    .event { padding: 0.8rem; gap: 0.6rem; }
+    .event__date { flex-basis: 2.65rem; }
+    .event__interest { display: none; }
+  }
+</style>
