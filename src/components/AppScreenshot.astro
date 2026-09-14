@@ -1,4 +1,7 @@
 ---
+import type { ImageMetadata } from 'astro';
+import { getImage } from 'astro:assets';
+
 interface Props {
   src: string;
   lightSrc?: string;
@@ -8,13 +11,39 @@ interface Props {
 }
 
 const { src, lightSrc = src, alt, className = '', loading = 'lazy' } = Astro.props;
+const assets = import.meta.glob('../assets/screenshots/*.png', {
+  eager: true,
+  import: 'default',
+}) as Record<string, ImageMetadata>;
+
+function resolveAsset(path: string) {
+  const filename = path.split('/').pop();
+  const asset = assets[`../assets/screenshots/${filename}`];
+  if (!asset) throw new Error(`Screenshot asset not found: ${path}`);
+  return asset;
+}
+
+const widths = [320, 480, 640, 768];
+const darkImage = await getImage({ src: resolveAsset(src), widths, formats: ['webp'] });
+const lightImage = await getImage({ src: resolveAsset(lightSrc), widths, formats: ['webp'] });
 ---
 
 <div class:list={['app-screenshot', className]}>
   <div class="app-screenshot__bezel">
     <div class="app-screenshot__screen">
-      <img class="app-screenshot__image app-screenshot__image--dark" src={src} alt={alt} loading={loading} decoding="async" />
-      <img class="app-screenshot__image app-screenshot__image--light" src={lightSrc} alt="" aria-hidden="true" loading={loading} decoding="async" />
+      <img
+        class="app-screenshot__image"
+        src={darkImage.src}
+        srcset={darkImage.srcSet.attribute}
+        sizes="(max-width: 920px) 80vw, 368px"
+        data-dark-src={darkImage.src}
+        data-dark-srcset={darkImage.srcSet.attribute}
+        data-light-src={lightImage.src}
+        data-light-srcset={lightImage.srcSet.attribute}
+        alt={alt}
+        loading={loading}
+        decoding="async"
+      />
     </div>
     <div class="app-screenshot__island" aria-hidden="true"></div>
     <div class="app-screenshot__home" aria-hidden="true"></div>
@@ -57,18 +86,6 @@ const { src, lightSrc = src, alt, className = '', loading = 'lazy' } = Astro.pro
     height: 100%;
     object-fit: cover;
     object-position: center;
-  }
-
-  .app-screenshot__image--light {
-    display: none;
-  }
-
-  :global(html[data-theme='light'] .app-screenshot__image--dark) {
-    display: none !important;
-  }
-
-  :global(html[data-theme='light'] .app-screenshot__image--light) {
-    display: block !important;
   }
 
   .app-screenshot__island {
