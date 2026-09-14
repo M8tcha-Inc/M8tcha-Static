@@ -1,4 +1,6 @@
 ---
+import AppScreenshot from './AppScreenshot.astro';
+
 const phrases = [
   'Discover nearby',
   'Live Rooms',
@@ -32,39 +34,13 @@ const phrases = [
       <div class="stage">
         <div class="stage__glow stage__glow--pink"></div>
         <div class="stage__glow stage__glow--matcha"></div>
-        <div class="phone">
-          <div class="phone__notch"></div>
-          <div class="phone__screen">
-            <div class="chip">NEAR YOU · 0.7 MI</div>
-            <div class="profile-card">
-              <div class="profile-card__photo">
-                <img
-                  class="avatar-face"
-                  src="/images/person-1.jpg?v=2"
-                  alt=""
-                  width="180"
-                  height="180"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div class="avatar-ring"></div>
-              </div>
-              <div class="profile-card__meta">
-                <strong>Alex, 27</strong>
-                <span>Coffee, late walks, bad puns</span>
-              </div>
-            </div>
-            <div class="actions">
-              <span class="orb orb--pass"></span>
-              <span class="orb orb--like"></span>
-              <span class="orb orb--super"></span>
-            </div>
-            <div class="room-pill">
-              <span class="room-pill__live"></span>
-              3 live in Sunset Hangout
-            </div>
-          </div>
-        </div>
+        <AppScreenshot
+          className="hero-phone"
+          src="/screenshots/Dark-Discovery-1.png"
+          lightSrc="/screenshots/Discovery-1.png"
+          alt="M8tcha Discover screen showing a nearby profile"
+          loading="eager"
+        />
         <div class="float float--match">It’s a match</div>
         <div class="float float--room">Join stage</div>
       </div>
@@ -88,15 +64,15 @@ const phrases = [
 </section>
 
 <script>
-  const root = document.querySelector('[data-marquee]');
-  const track = root?.querySelector('[data-marquee-track]');
-  const source = root?.querySelector('[data-marquee-group]');
+  const root = document.querySelector<HTMLElement>('[data-marquee]');
+  const track = root?.querySelector<HTMLElement>('[data-marquee-track]');
+  const source = root?.querySelector<HTMLElement>('[data-marquee-group]');
   if (root && track && source) {
-    const seed = source.cloneNode(true);
-    let resizeTimer;
+    const seed = source.cloneNode(true) as HTMLElement;
+    let resizeTimer: ReturnType<typeof setTimeout> | undefined;
 
     const sync = () => {
-      const sample = seed.cloneNode(true);
+      const sample = seed.cloneNode(true) as HTMLElement;
       track.replaceChildren(sample);
 
       let guard = 0;

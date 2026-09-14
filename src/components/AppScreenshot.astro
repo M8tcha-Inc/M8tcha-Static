@@ -1,0 +1,98 @@
+---
+interface Props {
+  src: string;
+  lightSrc?: string;
+  alt: string;
+  className?: string;
+  loading?: 'eager' | 'lazy';
+}
+
+const { src, lightSrc = src, alt, className = '', loading = 'lazy' } = Astro.props;
+---
+
+<div class:list={['app-screenshot', className]}>
+  <div class="app-screenshot__bezel">
+    <div class="app-screenshot__screen">
+      <img class="app-screenshot__image app-screenshot__image--dark" src={src} alt={alt} loading={loading} decoding="async" />
+      <img class="app-screenshot__image app-screenshot__image--light" src={lightSrc} alt="" aria-hidden="true" loading={loading} decoding="async" />
+    </div>
+    <div class="app-screenshot__island" aria-hidden="true"></div>
+    <div class="app-screenshot__home" aria-hidden="true"></div>
+  </div>
+</div>
+
+<style>
+  .app-screenshot {
+    width: min(100%, 23rem);
+    aspect-ratio: 0.46;
+    position: relative;
+    isolation: isolate;
+  }
+
+  .app-screenshot__bezel {
+    position: absolute;
+    inset: 0;
+    padding: 0.48rem;
+    border: 1px solid color-mix(in srgb, var(--cream) 28%, transparent);
+    border-radius: clamp(1.8rem, 5vw, 3rem);
+    background: linear-gradient(145deg, #3a393a, #090909 28%, #1d1d1e 72%, #050505);
+    box-shadow:
+      0 2rem 4rem color-mix(in srgb, var(--ink) 45%, transparent),
+      inset 1px 1px 0 rgba(255, 255, 255, 0.2),
+      inset -1px -1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .app-screenshot__screen {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: clamp(1.45rem, 4vw, 2.55rem);
+    background: #080808;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  }
+
+  .app-screenshot img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .app-screenshot__image--light {
+    display: none;
+  }
+
+  :global(html[data-theme='light'] .app-screenshot__image--dark) {
+    display: none !important;
+  }
+
+  :global(html[data-theme='light'] .app-screenshot__image--light) {
+    display: block !important;
+  }
+
+  .app-screenshot__island {
+    position: absolute;
+    z-index: 2;
+    top: 0.82rem;
+    left: 50%;
+    width: 34%;
+    height: 1.35rem;
+    border-radius: 999px;
+    background: #050505;
+    transform: translateX(-50%);
+    box-shadow: 0 1px 2px rgba(255, 255, 255, 0.08);
+  }
+
+  .app-screenshot__home {
+    position: absolute;
+    z-index: 2;
+    bottom: 0.72rem;
+    left: 50%;
+    width: 31%;
+    height: 0.22rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.76);
+    transform: translateX(-50%);
+  }
+</style>

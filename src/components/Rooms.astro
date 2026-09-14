@@ -1,23 +1,14 @@
 ---
+import AppScreenshot from './AppScreenshot.astro';
 ---
 
 <section class="rooms" id="rooms">
   <div class="wrap rooms__grid">
     <div class="rooms__visual reveal" aria-hidden="true">
-      <div class="grid-stage">
-        <div class="tile tile--host">
-          <img class="tile__photo" src="/images/person-5.jpg?v=2" alt="" width="320" height="400" loading="lazy" decoding="async" />
-          <span>Riley</span>
-        </div>
-        <div class="tile">
-          <img class="tile__photo" src="/images/person-2.jpg?v=2" alt="" width="240" height="300" loading="lazy" decoding="async" />
-          <span>Sam</span>
-        </div>
-        <div class="tile">
-          <img class="tile__photo" src="/images/person-3.jpg?v=2" alt="" width="240" height="300" loading="lazy" decoding="async" />
-          <span>Jordan</span>
-        </div>
-      </div>
+      <AppScreenshot
+        src="/screenshots/Rooms-1.png"
+        alt="M8tcha Rooms screen showing people gathered in a live room"
+      />
     </div>
 
     <div class="rooms__copy reveal reveal-delay-1">
@@ -51,6 +42,15 @@
     display: grid;
     gap: clamp(2rem, 4vw, 4rem);
     align-items: center;
+  }
+
+  .rooms__visual {
+    display: grid;
+    place-items: center;
+  }
+
+  .rooms__visual .app-screenshot {
+    width: min(100%, 20rem);
   }
 
   .eyebrow {
