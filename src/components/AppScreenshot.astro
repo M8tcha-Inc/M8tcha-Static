@@ -8,9 +8,17 @@ interface Props {
   alt: string;
   className?: string;
   loading?: 'eager' | 'lazy';
+  fetchpriority?: 'high' | 'low' | 'auto';
 }
 
-const { src, lightSrc = src, alt, className = '', loading = 'lazy' } = Astro.props;
+const {
+  src,
+  lightSrc = src,
+  alt,
+  className = '',
+  loading = 'lazy',
+  fetchpriority = 'auto',
+} = Astro.props;
 const assets = import.meta.glob('../assets/screenshots/*.png', {
   eager: true,
   import: 'default',
@@ -42,6 +50,7 @@ const lightImage = await getImage({ src: resolveAsset(lightSrc), widths, formats
         data-light-srcset={lightImage.srcSet.attribute}
         alt={alt}
         loading={loading}
+        fetchpriority={fetchpriority}
         decoding="async"
       />
     </div>
