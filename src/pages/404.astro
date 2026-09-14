@@ -1,0 +1,106 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Page not found - M8tcha"
+  description="The page you're looking for could not be found."
+>
+  <Nav />
+
+  <main class="not-found wrap">
+    <div class="not-found__eyebrow reveal">404 / wrong turn</div>
+    <div class="not-found__content reveal">
+      <p class="not-found__number" aria-hidden="true">404</p>
+      <div class="not-found__copy">
+        <h1>This page missed the match.</h1>
+        <p>The link may be old, or this page may have wandered somewhere else.</p>
+        <a class="btn btn-primary" href="/">Back to the beginning <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .not-found {
+    min-height: min(68vh, 48rem);
+    display: grid;
+    align-content: center;
+    gap: clamp(2rem, 6vw, 5rem);
+    padding-top: clamp(4rem, 10vw, 9rem);
+    padding-bottom: clamp(5rem, 10vw, 9rem);
+    position: relative;
+    z-index: 1;
+  }
+
+  .not-found__eyebrow {
+    color: var(--pink);
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .not-found__content {
+    display: grid;
+    grid-template-columns: minmax(9rem, 0.7fr) minmax(0, 1fr);
+    align-items: end;
+    gap: clamp(2rem, 7vw, 9rem);
+  }
+
+  .not-found__number {
+    color: var(--matcha-bright);
+    font-family: var(--font-display);
+    font-size: clamp(7rem, 23vw, 22rem);
+    font-weight: 800;
+    letter-spacing: -0.09em;
+    line-height: 0.72;
+  }
+
+  .not-found__copy {
+    max-width: 38rem;
+    display: grid;
+    gap: 1.5rem;
+    padding-bottom: 0.35rem;
+  }
+
+  .not-found h1 {
+    max-width: 12ch;
+    font-size: clamp(2.8rem, 6vw, 6.75rem);
+  }
+
+  .not-found__copy > p {
+    max-width: 30rem;
+    color: var(--text-muted);
+    font-size: var(--font-size-lede);
+  }
+
+  .not-found .btn {
+    width: fit-content;
+  }
+
+  .not-found .btn span {
+    margin-left: 0.5rem;
+  }
+
+  @media (max-width: 640px) {
+    .not-found {
+      min-height: 68vh;
+      gap: 3rem;
+    }
+
+    .not-found__content {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .not-found__number {
+      font-size: clamp(8rem, 38vw, 13rem);
+    }
+  }
+</style>
