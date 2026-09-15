@@ -3,8 +3,10 @@ import Layout from '../../layouts/Layout.astro';
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 
-const lastUpdated = 'September 13, 2026';
+const lastUpdated = 'September 15, 2026';
 const supportEmail = 'hello@m8tcha.com';
+const developerName = 'M8tcha, Inc.';
+const developerAddress = 'Delaware, United States';
 ---
 
 <Layout
@@ -18,11 +20,15 @@ const supportEmail = 'hello@m8tcha.com';
     <p class="updated"><strong>Last Updated: {lastUpdated}</strong></p>
 
     <p>
-      These Terms of Service ("<strong>Terms</strong>") are a legal agreement between you and
+      These Terms of Service ("<strong>Terms</strong>") are a legal agreement and End-User License
+      Agreement ("<strong>EULA</strong>") between you (the "<strong>End-User</strong>") and
       M8tcha, Inc. ("<strong>M8tcha</strong>," "<strong>we</strong>," "<strong>us</strong>,"
       "<strong>our</strong>") governing your use of the M8tcha: Find Your People mobile application
-      and related websites and services (the "<strong>App</strong>"). By creating an account or
-      using the App, you agree to these Terms and our{' '}
+      (the "<strong>Licensed Application</strong>" when obtained from the Apple App Store) and
+      related websites and services (collectively, the "<strong>App</strong>"). This EULA is
+      concluded between you and M8tcha only, and not with Apple Inc. ("<strong>Apple</strong>").
+      M8tcha, not Apple, is solely responsible for the App and its content. By creating an account
+      or using the App, you agree to these Terms and our{' '}
       <a href="/legal/privacy">Privacy Policy</a>,{' '}<a href="/legal/acceptable-use">Acceptable Use Policy</a>,{' '}
       and <a href="/legal/refunds">Refund Policy</a>. If you do not agree, do not use the App.
     </p>
@@ -225,8 +231,13 @@ const supportEmail = 'hello@m8tcha.com';
     <h2>8. Intellectual Property</h2>
     <p>
       The App, including its design, features, logos, and trademarks (excluding User Content), is
-      owned by M8tcha, Inc. and protected by intellectual property laws. You may not copy, modify,
-      distribute, or create derivative works from the App without our written permission.
+      owned by M8tcha, Inc. and protected by intellectual property laws. Subject to your compliance
+      with these Terms, M8tcha grants you a limited, revocable, non-exclusive, non-transferable
+      license to download and use the App for your personal, non-commercial use on devices you own
+      or control. This license does not transfer ownership of the App to you. You may not copy,
+      modify, distribute, or create derivative works from the App without our written permission,
+      except as expressly permitted by these Terms or by the Usage Rules in the Apple Media Services
+      Terms and Conditions (including Family Sharing or volume purchasing, where applicable).
     </p>
 
     <h3>Copyright Complaints (DMCA)</h3>
@@ -242,7 +253,7 @@ const supportEmail = 'hello@m8tcha.com';
     <ul>
       <li>
         <strong>You</strong> may delete your account at any time via{' '}
-        <strong>Settings &gt; Account &gt; Delete Account</strong>.
+        <strong>Profile &gt; Edit Profile &gt; Delete Account</strong>.
       </li>
       <li>
         <strong>We</strong> may suspend or terminate your account, with or without notice, if you
@@ -350,48 +361,116 @@ const supportEmail = 'hello@m8tcha.com';
       resolve it in good faith within 30 days.
     </p>
 
-    <h2>16. Apple App Store Terms (Required Notices)</h2>
+    <h2>16. Apple-Required EULA Terms</h2>
     <p>
-      Because you may have downloaded the App from the Apple App Store, the following additional
-      terms apply and take precedence over any conflicting terms in this section, but only as to
-      Apple:
+      If you obtained the App from the Apple App Store, the App is a Licensed Application under
+      Apple's Minimum Terms of Developer's End-User License Agreement. These Terms are the EULA for
+      that Licensed Application. The following terms apply and, as between you, M8tcha, and Apple,
+      control over any conflicting terms in these Terms solely with respect to Apple and your use of
+      the Licensed Application on Apple-branded products.
     </p>
-    <ul>
-      <li>
-        These Terms are between you and M8tcha only, <strong>not with Apple</strong>, and Apple is
-        not responsible for the App or its content.
-      </li>
-      <li>Apple has no obligation to furnish any maintenance or support services for the App.</li>
-      <li>
-        In the event of any failure of the App to conform to any applicable warranty, you may notify
-        Apple, and Apple will refund the purchase price (if any) for the App to you; to the maximum
-        extent permitted by law, Apple has no other warranty obligation with respect to the App.
-      </li>
-      <li>
-        Apple is not responsible for addressing any claims by you or any third party relating to the
-        App, including product liability claims, claims that the App fails to conform to legal or
-        regulatory requirements, and claims arising under consumer protection or similar
-        legislation.
-      </li>
-      <li>
-        Apple is not responsible for the investigation, defense, settlement, or discharge of any
-        third-party claim that the App infringes that third party's intellectual property rights.
-      </li>
-      <li>
-        You represent that you are not located in a country subject to a U.S. Government embargo or
-        designated as a "terrorist supporting" country, and are not on any U.S. Government list of
-        prohibited or restricted parties.
-      </li>
-      <li>
-        You must comply with applicable third-party terms when using the App (e.g., your wireless
-        data service agreement).
-      </li>
-      <li>
-        <strong>Apple and Apple's subsidiaries are third-party beneficiaries of these Terms</strong
-        >, and upon your acceptance, Apple has the right (and will be deemed to have accepted the
-        right) to enforce these Terms against you as a third-party beneficiary.
-      </li>
-    </ul>
+
+    <h3>16.1 Acknowledgement</h3>
+    <p>
+      You and M8tcha acknowledge that this EULA is concluded between you and M8tcha only, and not
+      with Apple. M8tcha, not Apple, is solely responsible for the Licensed Application and the
+      content thereof. These Terms do not provide usage rules for the Licensed Application that
+      conflict with the{' '}
+      <a
+        href="https://www.apple.com/legal/internet-services/itunes/us/terms.html"
+        target="_blank"
+        rel="noopener noreferrer">Apple Media Services Terms and Conditions</a
+      >{' '}
+      as of the effective date of these Terms, which M8tcha acknowledges it has had the opportunity
+      to review. If any usage rule in these Terms conflicts with the Apple Media Services Terms and
+      Conditions regarding use of the Licensed Application on Apple-branded products, the Apple
+      Media Services Terms and Conditions control.
+    </p>
+
+    <h3>16.2 Scope of License</h3>
+    <p>
+      The license granted to you for the Licensed Application is limited to a non-transferable
+      license to use the Licensed Application on any Apple-branded products that you own or control
+      and as permitted by the Usage Rules set forth in the Apple Media Services Terms and
+      Conditions, except that the Licensed Application may be accessed and used by other accounts
+      associated with the purchaser via Family Sharing or volume purchasing.
+    </p>
+
+    <h3>16.3 Maintenance and Support</h3>
+    <p>
+      M8tcha is solely responsible for providing any maintenance and support services with respect
+      to the Licensed Application, as specified in these Terms or as required under applicable law.
+      You and M8tcha acknowledge that Apple has no obligation whatsoever to furnish any maintenance
+      or support services with respect to the Licensed Application. Direct support requests to{' '}
+      <a href={`mailto:${supportEmail}`}>{supportEmail}</a>.
+    </p>
+
+    <h3>16.4 Warranty</h3>
+    <p>
+      M8tcha is solely responsible for any product warranties, whether express or implied by law, to
+      the extent not effectively disclaimed. In the event of any failure of the Licensed Application
+      to conform to any applicable warranty, you may notify Apple, and Apple will refund the
+      purchase price for the Licensed Application to you. To the maximum extent permitted by
+      applicable law, Apple will have no other warranty obligation whatsoever with respect to the
+      Licensed Application, and any other claims, losses, liabilities, damages, costs, or expenses
+      attributable to any failure to conform to any warranty will be M8tcha's sole responsibility.
+    </p>
+
+    <h3>16.5 Product Claims</h3>
+    <p>
+      You and M8tcha acknowledge that M8tcha, not Apple, is responsible for addressing any claims of
+      yours or any third party relating to the Licensed Application or your possession and/or use of
+      that Licensed Application, including, but not limited to: (i) product liability claims; (ii)
+      any claim that the Licensed Application fails to conform to any applicable legal or regulatory
+      requirement; and (iii) claims arising under consumer protection, privacy, or similar
+      legislation, including in connection with the Licensed Application's use of the HealthKit and
+      HomeKit frameworks (if used). These Terms do not limit M8tcha's liability to you beyond what
+      is permitted by applicable law.
+    </p>
+
+    <h3>16.6 Intellectual Property Rights</h3>
+    <p>
+      You and M8tcha acknowledge that, in the event of any third-party claim that the Licensed
+      Application or your possession and use of the Licensed Application infringes that third
+      party's intellectual property rights, M8tcha, not Apple, will be solely responsible for the
+      investigation, defense, settlement, and discharge of any such intellectual property
+      infringement claim.
+    </p>
+
+    <h3>16.7 Legal Compliance</h3>
+    <p>
+      You represent and warrant that (i) you are not located in a country that is subject to a U.S.
+      Government embargo, or that has been designated by the U.S. Government as a "terrorist
+      supporting" country; and (ii) you are not listed on any U.S. Government list of prohibited or
+      restricted parties.
+    </p>
+
+    <h3>16.8 Developer Name, Address, and Contact</h3>
+    <p>
+      Questions, complaints, or claims with respect to the Licensed Application should be directed
+      to:
+    </p>
+    <p>
+      <strong>{developerName}</strong><br />
+      {developerAddress}<br />
+      Email:{' '}
+      <a href={`mailto:${supportEmail}`}>{supportEmail}</a>
+    </p>
+
+    <h3>16.9 Third-Party Terms of Agreement</h3>
+    <p>
+      You must comply with applicable third-party terms of agreement when using the Licensed
+      Application. For example, you must not violate your wireless data service agreement when using
+      the App, including live audio or video Rooms or other data-intensive features.
+    </p>
+
+    <h3>16.10 Third-Party Beneficiary</h3>
+    <p>
+      You and M8tcha acknowledge and agree that Apple, and Apple's subsidiaries, are third-party
+      beneficiaries of this EULA, and that, upon your acceptance of these Terms, Apple will have the
+      right (and will be deemed to have accepted the right) to enforce this EULA against you as a
+      third-party beneficiary thereof.
+    </p>
 
     <h2>17. Google Play Terms</h2>
     <p>
@@ -412,7 +491,8 @@ const supportEmail = 'hello@m8tcha.com';
     <h2>19. General</h2>
     <ul>
       <li>
-        <strong>Entire Agreement:</strong> These Terms, together with our Privacy Policy, constitute
+        <strong>Entire Agreement:</strong> These Terms (including the Apple-required EULA terms),
+        together with our Privacy Policy, Acceptable Use Policy, and Refund Policy, constitute
         the entire agreement between you and M8tcha regarding the App.
       </li>
       <li>
@@ -424,7 +504,9 @@ const supportEmail = 'hello@m8tcha.com';
         that right.
       </li>
       <li>
-        <strong>Assignment:</strong> You may not assign these Terms without our consent; we may
+        <strong>Assignment:</strong> You may not assign these Terms without our consent, except that
+        the Licensed Application may be accessed and used by other accounts associated with the
+        purchaser via Family Sharing or volume purchasing as permitted by Apple. We may
         assign these Terms in connection with a merger, acquisition, financing, or sale of assets.
       </li>
       <li>
@@ -435,9 +517,11 @@ const supportEmail = 'hello@m8tcha.com';
 
     <h2>20. Contact Us</h2>
     <p>
-      <strong>M8tcha, Inc.</strong><br />
-      Delaware, United States<br />
+      <strong>{developerName}</strong><br />
+      {developerAddress}<br />
       Email: <a href={`mailto:${supportEmail}`}>{supportEmail}</a><br />
+      Questions, complaints, or claims about the Licensed Application:{' '}
+      <a href={`mailto:${supportEmail}`}>{supportEmail}</a><br />
       More contact options: <a href="/legal/contact">Contact Information</a><br />
       Authorized government requests: <a href="/legal/law-enforcement">Law-enforcement protocols</a>
     </p>
