@@ -2,8 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import { Image } from 'astro:assets';
+import { getImage } from 'astro:assets';
 import flyerImage from '../assets/m8tcha-startup-launch-flyer.png';
+import flyerImageDark from '../assets/m8tcha-startup-launch-flyer-dark.png';
+
+const flyerDarkOptimized = await getImage({ src: flyerImageDark, widths: [400, 600, 800], formats: ['webp'] });
+const flyerLightOptimized = await getImage({ src: flyerImage, widths: [400, 600, 800], formats: ['webp'] });
 
 const shareUrl = 'https://m8tcha.com/launch-party';
 const shareText = 'Join me at the M8tcha Launch Party!';
@@ -39,7 +43,10 @@ const shareLinks = [
 ];
 ---
 
-<Layout>
+<Layout
+  title="M8tcha Launch Party — RSVP Now"
+  description="Join the M8tcha Social Collective launch party on 11-13-26, 8PM–12AM. Drinks, music, and a first look at the app. RSVP now."
+>
   <Nav />
   <main>
     <section class="launch-party">
@@ -78,12 +85,16 @@ const shareLinks = [
           </div>
         </div>
         <div class="launch-party__visual reveal reveal-delay-3">
-          <Image
-            src={flyerImage}
+          <img
+            src={flyerDarkOptimized.src}
+            srcset={flyerDarkOptimized.srcSet.attribute}
+            sizes="(max-width: 768px) 90vw, 45vw"
+            data-dark-src={flyerDarkOptimized.src}
+            data-dark-srcset={flyerDarkOptimized.srcSet.attribute}
+            data-light-src={flyerLightOptimized.src}
+            data-light-srcset={flyerLightOptimized.srcSet.attribute}
             alt="M8tcha Social Collective Launch Party flyer — Date: 11-13-26, Time: 8PM - 12AM"
             class="flyer-image"
-            widths={[400, 600, 800]}
-            sizes="(max-width: 768px) 90vw, 45vw"
             loading="eager"
           />
         </div>
@@ -94,7 +105,7 @@ const shareLinks = [
       <div class="modal-content">
         <button class="modal-close" aria-label="Close modal">&times;</button>
         <h2 class="modal-title">RSVP for Launch Party</h2>
-        <form id="rsvp-form" novalidate>
+        <form id="rsvp-form">
           <div class="form-grid">
             <div class="form-group">
               <label>First Name</label>
