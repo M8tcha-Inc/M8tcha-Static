@@ -1,0 +1,150 @@
+---
+const formFields = [
+  { name: 'firstName', label: 'First Name', type: 'text', placeholder: 'John', required: true },
+  { name: 'lastName', label: 'Last Name', type: 'text', placeholder: 'Doe', required: true },
+  { name: 'email', label: 'Email', type: 'email', placeholder: 'john@example.com', required: true },
+  { name: 'phone', label: 'Phone Number', type: 'tel', placeholder: '+1 (555) 123-4567', required: true },
+];
+---
+<section class="rsvp-form">
+  <div class="wrap rsvp-form__container">
+    <form id="rsvp-form" novalidate>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>First Name</label>
+          <input
+            type="text"
+            name="firstName"
+            placeholder="John"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input
+            type="text"
+            name="lastName"
+            placeholder="Doe"
+            required
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input
+          type="email"
+          name="email"
+          placeholder="john@example.com"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input
+          type="tel"
+          name="phone"
+          placeholder="+1 (555) 123-4567"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Submit RSVP</button>
+    </form>
+  </div>
+</section>
+
+<style>
+  .rsvp-form {
+    padding: var(--section-space) 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .rsvp-form__container {
+    max-width: 500px;
+    width: 100%;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: clamp(2rem, 5vw, 3rem);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  #rsvp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-group label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .form-group input {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .form-group input:focus {
+    outline: none;
+    border-color: var(--matcha);
+    box-shadow: 0 0 0 2px var(--matcha-muted);
+  }
+
+  .w-100 {
+    width: 100%;
+  }
+
+  @media (max-width: 600px) {
+    .form-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .rsvp-form__container {
+      padding: 1.5rem;
+    }
+  }
+</style>
+
+<script>
+  const form = document.getElementById('rsvp-form') as HTMLFormElement;
+  
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const formData = {
+      firstName: (form.elements.namedItem('firstName') as HTMLInputElement).value,
+      lastName: (form.elements.namedItem('lastName') as HTMLInputElement).value,
+      email: (form.elements.namedItem('email') as HTMLInputElement).value,
+      phone: (form.elements.namedItem('phone') as HTMLInputElement).value,
+    };
+    
+    // Here you would typically send the data to your backend
+    console.log('RSVP submitted:', formData);
+    
+    // For now, just show an alert and reset the form
+    alert('Thank you for RSVPing! We look forward to seeing you at the launch party.');
+    form.reset();
+  });
+</script>
