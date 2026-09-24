@@ -1,5 +1,5 @@
 /**
- * M8tcha Launch Party RSVP — Google Apps Script Web App
+ * M8tcha Launch Party RSVP - Google Apps Script Web App
  *
  * SETUP:
  * 1. Create a new Google Sheet (https://sheets.new)
