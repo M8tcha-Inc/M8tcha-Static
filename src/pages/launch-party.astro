@@ -390,6 +390,26 @@ const shareLinks = [
       justify-content: center;
     }
 
+    .launch-party__content {
+      display: contents;
+    }
+
+    .launch-party__visual {
+      order: -2;
+    }
+
+    .share {
+      order: 1;
+      margin-top: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .share__buttons {
+      justify-content: center;
+    }
+
     .form-grid {
       grid-template-columns: 1fr;
     }
@@ -472,19 +492,40 @@ const shareLinks = [
     if (e.key === 'Escape') closeModal();
   });
 
-  form?.addEventListener('submit', (e) => {
+  const GOOGLE_SHEETS_WEB_APP_URL = 'PASTE_YOUR_WEB_APP_URL_HERE';
+
+  form?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    
+    const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+
     const formData = {
-      firstName: (form.elements.namedItem('firstName') as HTMLInputElement).value,
-      lastName: (form.elements.namedItem('lastName') as HTMLInputElement).value,
-      email: (form.elements.namedItem('email') as HTMLInputElement).value,
-      phone: (form.elements.namedItem('phone') as HTMLInputElement).value,
+      firstName: (form.elements.namedItem('firstName') as HTMLInputElement).value.trim(),
+      lastName: (form.elements.namedItem('lastName') as HTMLInputElement).value.trim(),
+      email: (form.elements.namedItem('email') as HTMLInputElement).value.trim(),
+      phone: (form.elements.namedItem('phone') as HTMLInputElement).value.trim(),
     };
-    
-    console.log('RSVP submitted:', formData);
-    alert('Thank you for RSVPing! We look forward to seeing you at the launch party.');
-    form.reset();
-    closeModal();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting…';
+
+    try {
+      const response = await fetch(GOOGLE_SHEETS_WEB_APP_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) throw new Error('Network response was not ok');
+
+      alert('Thank you for RSVPing! We look forward to seeing you at the launch party.');
+      form.reset();
+      closeModal();
+    } catch (error) {
+      console.error('RSVP submission failed:', error);
+      alert('Something went wrong. Please try again or contact us directly.');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit RSVP';
+    }
   });
 </script>
